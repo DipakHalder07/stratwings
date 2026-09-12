@@ -90,9 +90,28 @@ async function main() {
     fs.writeFileSync('scratch/sw_prefixed_verified.png', Buffer.from(ssRes.data, 'base64'));
     console.log('Captured screenshot to scratch/sw_prefixed_verified.png');
 
+    // Scroll to Concepts button
+    await send('Runtime.evaluate', {
+      expression: `document.querySelector('.sw-concepts-button').scrollIntoView({ behavior: 'instant', block: 'center' })`
+    });
+    await new Promise(r => setTimeout(r, 800));
+    const ssBtnRes = await send('Page.captureScreenshot', { format: 'png' });
+    fs.writeFileSync('scratch/sw_concepts_button_verified.png', Buffer.from(ssBtnRes.data, 'base64'));
+    console.log('Captured screenshot to scratch/sw_concepts_button_verified.png');
+
+    // Scroll to Feedback envelope
+    await send('Runtime.evaluate', {
+      expression: `document.querySelector('.sw-feedback-envelope').scrollIntoView({ behavior: 'instant', block: 'center' })`
+    });
+    await new Promise(r => setTimeout(r, 800));
+    const ssEnvRes = await send('Page.captureScreenshot', { format: 'png' });
+    fs.writeFileSync('scratch/sw_envelope_verified.png', Buffer.from(ssEnvRes.data, 'base64'));
+    console.log('Captured screenshot to scratch/sw_envelope_verified.png');
+
     // 4. Test Contact Modal Click
     await send('Runtime.evaluate', {
       expression: `(() => {
+        window.scrollTo(0, 0);
         const btn = document.querySelector('.sw-header-button-design');
         if (btn) btn.click();
       })()`
