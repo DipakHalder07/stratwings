@@ -31,13 +31,13 @@ export default function Feedback({ onOpenContact }) {
   const flowerParallax = useTransform(scrollYProgress, [0, 1], ['-30%', '0%']);
 
   useEffect(() => {
-    const letters = document.querySelectorAll('.feedback-letter');
+    const letters = document.querySelectorAll('.sw-feedback-letter');
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry, idx) => {
           if (entry.isIntersecting) {
             setTimeout(() => {
-              entry.target.classList.add('feedback-letter-is-visible');
+              entry.target.classList.add('sw-feedback-letter-is-visible');
             }, idx * 200);
           }
         });
@@ -49,26 +49,26 @@ export default function Feedback({ onOpenContact }) {
   }, []);
 
   return (
-    <section className="feedback">
-      <div className="container">
-        <div className="feedback-content">
+    <section className="sw-feedback">
+      <div className="sw-container">
+        <div className="sw-feedback-content">
           {/* Scroll-Triggered Envelope */}
-          <div className="feedback-envelope-wrapper" ref={envelopeRef}>
+          <div className="sw-feedback-envelope-wrapper" ref={envelopeRef}>
             <motion.div
-              className="feedback-envelope"
+              className="sw-feedback-envelope"
               style={{ rotateZ: rotateZEnvelope }}
             >
               {/* Starry badges */}
-              <Lottie className="feedback-lottie-right" animationData={boldLinesOne} />
-              <Lottie className="feedback-lottie-left" animationData={lineTwo} />
+              <Lottie className="sw-feedback-lottie-right" animationData={boldLinesOne} />
+              <Lottie className="sw-feedback-lottie-left" animationData={lineTwo} />
 
-              <img className="feedback-envelope-main" src="/image/feedback/envelope-main.png" alt="envelope" />
-              <img className="feedback-envelope-front" src="/image/feedback/envelope-front.png" alt="envelope" />
-              <img className="feedback-envelope-down" src="/image/feedback/envelope-down.png" alt="envelope" />
+              <img className="sw-feedback-envelope-main" src="/image/feedback/envelope-main.png" alt="envelope" />
+              <img className="sw-feedback-envelope-front" src="/image/feedback/envelope-front.png" alt="envelope" />
+              <img className="sw-feedback-envelope-down" src="/image/feedback/envelope-down.png" alt="envelope" />
               
               {/* Flap that opens on scroll and tucks behind */}
               <motion.img
-                className="feedback-envelope-had"
+                className="sw-feedback-envelope-had"
                 src="/image/feedback/envelope-had.png"
                 alt="envelope flap"
                 style={{
@@ -81,7 +81,7 @@ export default function Feedback({ onOpenContact }) {
 
               {/* Letter rising out of envelope */}
               <motion.div
-                className="feedback-envelope-letter"
+                className="sw-feedback-envelope-letter"
                 style={{
                   scale: scaleLetter,
                   translateY: translateYLetter
@@ -90,28 +90,28 @@ export default function Feedback({ onOpenContact }) {
                 <img src="/image/feedback/envelope-letter-bg.png" alt="letter-bg" />
                 <button
                   onClick={onOpenContact}
-                  className="button yellow-big feedback-envelope-letter-button"
+                  className="sw-button sw-yellow-big sw-feedback-envelope-letter-button"
                 >
-                  <div className="button-content">Start your project</div>
+                  <div className="sw-button-content">Start your project</div>
                 </button>
               </motion.div>
             </motion.div>
           </div>
 
           {/* Section Title */}
-          <h1 className="feedback-title" id="feedback">
-            Love <span className="brands">Letters</span> from
+          <h1 className="sw-feedback-title" id="feedback">
+            Love <span className="sw-brands">Letters</span> from
             <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;our client<span className="latter">S</span>
-            <img className="feedback-title-bg" src="/image/feedback/feedback-title-bg.png" alt="title-bg" />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;our client<span className="sw-latter">S</span>
+            <img className="sw-feedback-title-bg" src="/image/feedback/feedback-title-bg.png" alt="title-bg" />
           </h1>
 
           {/* Review Letters Grid */}
-          <div className="feedback-row">
+          <div className="sw-feedback-row">
             {LETTERS.map((letterImg, idx) => (
-              <div key={idx} className="feedback-letter-wrap">
+              <div key={idx} className="sw-feedback-letter-wrap">
                 <img
-                  className="feedback-letter"
+                  className="sw-feedback-letter"
                   src={letterImg}
                   alt={`client review ${idx + 1}`}
                 />
@@ -124,13 +124,13 @@ export default function Feedback({ onOpenContact }) {
       {/* Flowers parallax layers */}
       <motion.img
         src="/image/feedback/flowers/flowers-all.png"
-        className="feedback-flowers all"
+        className="sw-feedback-flowers sw-all"
         style={{ y: flowerParallax }}
         alt="flowers"
       />
       <img
         src="/image/feedback/flowers/flowers-down.png"
-        className="feedback-flowers down"
+        className="sw-feedback-flowers sw-down"
         alt="flowers"
       />
     </section>

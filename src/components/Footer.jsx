@@ -38,56 +38,56 @@ export default function Footer({ onOpenContact }) {
   };
 
   return (
-    <footer className="footer" id="footer">
-      <div className="container">
-        <div className="footer-content">
+    <footer className="sw-footer" id="footer">
+      <div className="sw-container">
+        <div className="sw-footer-content">
           {/* Left Column: Navigation & Copyright */}
-          <div className="footer-left">
-            <div className="footer-nav">
+          <div className="sw-footer-left">
+            <div className="sw-footer-nav">
               {NAV_LINKS.map((link, idx) => (
                 <a
                   key={idx}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className="footer-nav-link"
+                  className="sw-footer-nav-link"
                 >
                   <span>{link.title}</span>
-                  <img className="footer-nav-link-bg" src={link.bg} alt="bg" />
-                  <img className="footer-nav-link-bg-hover" src={link.bgHover} alt="bg-hover" />
+                  <img className="sw-footer-nav-link-bg" src={link.bg} alt="bg" />
+                  <img className="sw-footer-nav-link-bg-hover" src={link.bgHover} alt="bg-hover" />
                 </a>
               ))}
             </div>
 
-            <p className="footer-copyright">
-              © 2026 M.Zakharova. All rights reserved. Privacy policy.
+            <p className="sw-footer-copyright">
+              © 2026 StratWings. All rights reserved. Privacy policy.
             </p>
 
             <button
-              className="button yellow-small footer-back-mobile"
+              className="sw-button sw-yellow-small sw-footer-back-mobile"
               onClick={scrollToTop}
               title="Back to Top"
             >
-              <div className="button-content">↑</div>
+              <div className="sw-button-content">↑</div>
             </button>
           </div>
 
           {/* Center Column: Video & Floating Software Badges */}
-          <div className="footer-images">
-            <div className="footer-images-top">
-              <div className="footer-images-row">
+          <div className="sw-footer-images">
+            <div className="sw-footer-images-top">
+              <div className="sw-footer-images-row">
                 <img src="/image/footer/item1.png" alt="Figma" />
                 <img src="/image/footer/item2.png" alt="Illustrator" />
                 <img src="/image/footer/item3.png" alt="After Effects" />
               </div>
-              <div className="footer-images-row">
+              <div className="sw-footer-images-row">
                 <img src="/image/footer/item4.png" alt="Photoshop" />
                 <img src="/image/footer/item5.png" alt="XD" />
               </div>
             </div>
 
-            {/* Marina Autoplaying Transparent Video */}
+            {/* Transparent Video */}
             <video
-              className="footer-video"
+              className="sw-footer-video"
               autoPlay
               loop
               muted
@@ -102,59 +102,59 @@ export default function Footer({ onOpenContact }) {
 
             {/* Mobile Fallback Cutout */}
             <img
-              className="footer-images-marina-mobile"
-              src="/image/footer/marina-mobile.png"
-              alt="Marina Zakharova"
+              className="sw-footer-images-brand-mobile"
+              src="/image/footer/brand-mobile.png"
+              alt="Design Studio"
             />
           </div>
 
           {/* Right Column: Back to Top & Socials */}
-          <div className="footer-right">
+          <div className="sw-footer-right">
             <button
-              className="button yellow-small footer-back"
+              className="sw-button sw-yellow-small sw-footer-back"
               onClick={scrollToTop}
               title="Back to Top"
             >
-              <div className="button-content">↑</div>
+              <div className="sw-button-content">↑</div>
             </button>
 
-            <div className="footer-socials">
-              <div className="footer-socials-row">
+            <div className="sw-footer-socials">
+              <div className="sw-footer-socials-row">
                 <button
                   onClick={onOpenContact}
-                  className="button pink-small"
+                  className="sw-button sw-pink-small"
                   title="Email"
                 >
-                  <div className="button-content">✉</div>
+                  <div className="sw-button-content">✉</div>
                 </button>
                 <a
                   href="https://instagram.com"
                   target="_blank"
                   rel="noreferrer"
-                  className="button pink-small"
+                  className="sw-button sw-pink-small"
                   title="Instagram"
                 >
-                  <div className="button-content">📷</div>
+                  <div className="sw-button-content">📷</div>
                 </a>
               </div>
-              <div className="footer-socials-row">
+              <div className="sw-footer-socials-row">
                 <a
                   href="https://t.me"
                   target="_blank"
                   rel="noreferrer"
-                  className="button pink-small"
+                  className="sw-button sw-pink-small"
                   title="Telegram"
                 >
-                  <div className="button-content">✈</div>
+                  <div className="sw-button-content">✈</div>
                 </a>
                 <a
                   href="https://whatsapp.com"
                   target="_blank"
                   rel="noreferrer"
-                  className="button pink-small"
+                  className="sw-button sw-pink-small"
                   title="WhatsApp"
                 >
-                  <div className="button-content">💬</div>
+                  <div className="sw-button-content">💬</div>
                 </a>
               </div>
             </div>

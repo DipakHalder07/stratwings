@@ -48,52 +48,52 @@ export default function Concepts({ onOpenContact }) {
   const smoothY3 = useSpring(y3, { stiffness: 70, damping: 22 });
 
   return (
-    <section className="concepts" ref={containerRef}>
-      <div className="container">
-        <div className="concepts-content">
+    <section className="sw-concepts" ref={containerRef}>
+      <div className="sw-container">
+        <div className="sw-concepts-content">
           {/* Sticky Left Column: Titles & CTA */}
-          <div className="concepts-titles">
-            <h2 className="concepts-title">
-              Bringing <span className="brands">Concepts</span> <br />
-              to life - beautifull<span className="latter">y</span>
+          <div className="sw-concepts-titles">
+            <h2 className="sw-concepts-title">
+              Bringing <span className="sw-brands">Concepts</span> <br />
+              to life - beautifull<span className="sw-latter">y</span>
               <img
-                className="concepts-title-bg"
+                className="sw-concepts-title-bg"
                 src="/image/concepts/concepts-title-bg.png"
                 alt="title-bg"
               />
             </h2>
-            <p className="concepts-subtitle">
+            <p className="sw-concepts-subtitle">
               Your project deserves a place in our <br />
               gallery of standout designs
             </p>
             <button
               onClick={onOpenContact}
-              className="button yellow-big concepts-button"
+              className="sw-button sw-yellow-big sw-concepts-button"
             >
-              <div className="button-content">Start your project</div>
+              <div className="sw-button-content">Start your project</div>
             </button>
           </div>
 
           {/* 3-Column Parallax Products Grid */}
-          <div className="concepts-products-sticky">
-            <div className="concepts-products">
+          <div className="sw-concepts-products-sticky">
+            <div className="sw-concepts-products">
               {/* Column 1 */}
-              <motion.div className="concepts-products-inner" style={{ y: smoothY1 }}>
-                <div className="concepts-products-column">
+              <motion.div className="sw-concepts-products-inner" style={{ y: smoothY1 }}>
+                <div className="sw-concepts-products-column">
                   {PRODUCTS_FIRST.concat(PRODUCTS_FIRST).map((item, idx) => (
-                    <div key={`c1-${idx}`} className="concepts-product">
+                    <div key={`c1-${idx}`} className="sw-concepts-product">
                       <img src={item.img} alt={`concept product 1-${idx + 1}`} />
-                      {item.lottie && <Lottie className="concepts-product-lottie" animationData={item.lottie} />}
+                      {item.lottie && <Lottie className="sw-concepts-product-lottie" animationData={item.lottie} />}
                     </div>
                   ))}
                 </div>
               </motion.div>
 
               {/* Column 2 */}
-              <motion.div className="concepts-products-inner" style={{ y: smoothY2 }}>
-                <div className="concepts-products-column">
+              <motion.div className="sw-concepts-products-inner" style={{ y: smoothY2 }}>
+                <div className="sw-concepts-products-column">
                   {PRODUCTS_SECOND.concat(PRODUCTS_SECOND).map((src, idx) => (
-                    <div key={`c2-${idx}`} className="concepts-product">
+                    <div key={`c2-${idx}`} className="sw-concepts-product">
                       <img src={src} alt={`concept product 2-${idx + 1}`} />
                     </div>
                   ))}
@@ -101,10 +101,10 @@ export default function Concepts({ onOpenContact }) {
               </motion.div>
 
               {/* Column 3 */}
-              <motion.div className="concepts-products-inner" style={{ y: smoothY3 }}>
-                <div className="concepts-products-column">
+              <motion.div className="sw-concepts-products-inner" style={{ y: smoothY3 }}>
+                <div className="sw-concepts-products-column">
                   {PRODUCTS_THIRD.concat(PRODUCTS_THIRD).map((src, idx) => (
-                    <div key={`c3-${idx}`} className="concepts-product">
+                    <div key={`c3-${idx}`} className="sw-concepts-product">
                       <img src={src} alt={`concept product 3-${idx + 1}`} />
                     </div>
                   ))}

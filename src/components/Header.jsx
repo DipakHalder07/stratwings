@@ -40,11 +40,11 @@ export default function Header({ onOpenContact }) {
   };
 
   return (
-    <header className={`header ${isScrolled ? 'header-scrolled' : ''}`}>
-      <div className="container">
-        <div className="header-content">
+    <header className={`sw-header ${isScrolled ? 'sw-header-scrolled' : ''}`}>
+      <div className="sw-container">
+        <div className="sw-header-content">
           {/* Logo */}
-          <a className="header-logo" href="#" onClick={handleLogoClick}>
+          <a className="sw-header-logo" href="#" onClick={handleLogoClick}>
             <svg xmlns="http://www.w3.org/2000/svg" width="31" height="42" viewBox="0 0 31 42" fill="none">
               <path d="M2.79007 20.0985L2.62891 38.9009L9.3665 39.0079L9.35387 40.6158H17.6682L17.6511 38.8727L24.1837 38.7398L24.4741 20.2968L2.79007 20.0985Z" fill="#FFD905" stroke="black" strokeMiterlimit="10"></path>
               <path d="M0.600922 16.4371H6.54533L6.55276 24.7863H4.8082L2.34028 24.767L0.505859 24.7485L0.600922 16.4371Z" fill="#FFD905" stroke="black" strokeMiterlimit="10"></path>
@@ -57,29 +57,29 @@ export default function Header({ onOpenContact }) {
           </a>
 
           {/* Desktop Nav */}
-          <nav className="header-nav">
-            <ul className="header-list">
-              <li className="header-list-item button">
+          <nav className="sw-header-nav">
+            <ul className="sw-header-list">
+              <li className="sw-header-list-item sw-button">
                 <a href="#about" onClick={(e) => handleNavClick(e, '#about')}>
                   About the team <img alt="icon" src="/image/header/header-smile-icon.png" />
                 </a>
               </li>
-              <li className="header-list-item button">
+              <li className="sw-header-list-item sw-button">
                 <a href="#portfolio" onClick={(e) => handleNavClick(e, '#portfolio')}>
                   Our Portfolio <img alt="icon" src="/image/header/header-fire-icon.png" />
                 </a>
               </li>
-              <li className="header-list-item button">
+              <li className="sw-header-list-item sw-button">
                 <a href="#feedback" onClick={(e) => handleNavClick(e, '#feedback')}>
                   Clients <img alt="icon" src="/image/header/header-clients-icon.png" />
                 </a>
               </li>
-              <li className="header-list-item button">
+              <li className="sw-header-list-item sw-button">
                 <a href="#plan" onClick={(e) => handleNavClick(e, '#plan')}>
                   Pricing <img alt="icon" src="/image/header/header-price-icon.png" />
                 </a>
               </li>
-              <li className="header-list-item button">
+              <li className="sw-header-list-item sw-button">
                 <a href="#footer" onClick={(e) => handleNavClick(e, '#footer')}>
                   Get in Touch <img alt="icon" src="/image/header/header-mailbox-icon.png" />
                 </a>
@@ -88,12 +88,12 @@ export default function Header({ onOpenContact }) {
           </nav>
 
           {/* Right Action Button */}
-          <div className="header-buttons">
+          <div className="sw-header-buttons">
             <button
-              className="button yellow header-button-design"
+              className="sw-button sw-yellow sw-header-button-design"
               onClick={onOpenContact}
             >
-              <span className="button-content">
+              <span className="sw-button-content">
                 Get in Touch
                 <img src="/image/header/header-mailbox-icon.png" alt="icon" />
               </span>
@@ -101,7 +101,7 @@ export default function Header({ onOpenContact }) {
 
             {/* Mobile hamburger toggle */}
             <button
-              className={`header-button-menu ${isMenuOpen ? 'close' : ''}`}
+              className={`sw-header-button-menu ${isMenuOpen ? 'sw-close' : ''}`}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Toggle Navigation Menu"
             >
@@ -114,29 +114,29 @@ export default function Header({ onOpenContact }) {
       </div>
 
       {/* Mobile Drawer Menu */}
-      <div className={`header-mobile-menu ${isMenuOpen ? 'open' : ''}`}>
-        <div className="header-mobile-menu-buttons">
-          <button className="button menu" onClick={(e) => handleNavClick(e, '#about')}>
+      <div className={`sw-header-mobile-menu ${isMenuOpen ? 'sw-open' : ''}`}>
+        <div className="sw-header-mobile-menu-buttons">
+          <button className="sw-button sw-menu" onClick={(e) => handleNavClick(e, '#about')}>
             about the studio
           </button>
-          <button className="button menu" onClick={(e) => handleNavClick(e, '#portfolio')}>
+          <button className="sw-button sw-menu" onClick={(e) => handleNavClick(e, '#portfolio')}>
             our portfolio
           </button>
-          <button className="button menu" onClick={(e) => handleNavClick(e, '#feedback')}>
+          <button className="sw-button sw-menu" onClick={(e) => handleNavClick(e, '#feedback')}>
             clients
           </button>
-          <button className="button menu" onClick={(e) => handleNavClick(e, '#plan')}>
+          <button className="sw-button sw-menu" onClick={(e) => handleNavClick(e, '#plan')}>
             pricing
           </button>
-          <button className="button menu" onClick={(e) => handleNavClick(e, '#footer')}>
+          <button className="sw-button sw-menu" onClick={(e) => handleNavClick(e, '#footer')}>
             get in touch
           </button>
         </div>
 
-        <div className="header-mobile-menu-socials">
-          <div className="header-mobile-menu-socials-row">
-            <button className="button pink-small" onClick={() => { setIsMenuOpen(false); onOpenContact(); }}>
-              <div className="button-content">✉️</div>
+        <div className="sw-header-mobile-menu-socials">
+          <div className="sw-header-mobile-menu-socials-row">
+            <button className="sw-button sw-pink-small" onClick={() => { setIsMenuOpen(false); onOpenContact(); }}>
+              <div className="sw-button-content">✉️</div>
             </button>
           </div>
         </div>

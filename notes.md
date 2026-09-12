@@ -1,9 +1,9 @@
 # Audit & Action Plan: Restoring Authentic Experience from Live Site
 
 ## Reference Benchmark
-* **Live Site:** [https://marina-zakharova.netlify.app/](https://marina-zakharova.netlify.app/)
-* **Original Production CSS:** `scratch/original_live.css` (downloaded directly from `https://marina-zakharova.netlify.app/assets/index-BRQn7Ra-.css`)
-* **Original Production JS:** `scratch/original_live.js` (downloaded directly from `https://marina-zakharova.netlify.app/assets/index-C7JCyN7e.js`)
+* **Live Site:** [the reference site](the reference site)
+* **Original Production CSS:** `scratch/original_live.css` (downloaded directly from `the reference siteassets/index-BRQn7Ra-.css`)
+* **Original Production JS:** `scratch/original_live.js` (downloaded directly from `the reference siteassets/index-C7JCyN7e.js`)
 
 ---
 
@@ -58,7 +58,7 @@
 ## 2. Recovery Plan
 
 1. **Restore Authentic CSS (`src/index.css`):**
-   - Replace `src/index.css` with the genuine `scratch/original_live.css` from `https://marina-zakharova.netlify.app/`.
+   - Replace `src/index.css` with the genuine `scratch/original_live.css` from `the reference site`.
    - Ensure all `@font-face` and asset URLs map correctly to local files in `public/`.
 2. **Restore Authentic Component Tree (`src/App.jsx`):**
    - Align layout exactly to the live site:

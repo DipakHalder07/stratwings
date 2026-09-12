@@ -44,14 +44,14 @@ export default function Banner() {
   const visibleItems = isMobile ? BANNER_ITEMS.slice(activeIdx, activeIdx + 2) : BANNER_ITEMS;
 
   return (
-    <section className="banner">
-      <div className="banner-bg" style={{ transform: `translateY(${scrollY * 0.8}px)` }}></div>
-      <div className="container">
-        <div className="banner-content">
-          <h1 className="banner-title">
-            Designing <span className="brands">Brands</span> <br />
+    <section className="sw-banner">
+      <div className="sw-banner-bg" style={{ transform: `translateY(${scrollY * 0.8}px)` }}></div>
+      <div className="sw-container">
+        <div className="sw-banner-content">
+          <h1 className="sw-banner-title">
+            Designing <span className="sw-brands">Brands</span> <br />
             that
-            <span className="latter">
+            <span className="sw-latter">
               {' '}S
               <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
                 <path
@@ -62,21 +62,21 @@ export default function Banner() {
               </svg>
             </span>
             hine
-            <img className="banner-title-bg" src="/image/banner/title-bg.png" alt="title-bg" />
+            <img className="sw-banner-title-bg" src="/image/banner/title-bg.png" alt="title-bg" />
           </h1>
 
           <img
-            className="banner-subtitle"
+            className="sw-banner-subtitle"
             src="/image/banner/banner-subtitle.png"
             alt="Landing page design and development for ambitious brands"
           />
 
-          <div className="banner-items">
+          <div className="sw-banner-items">
             {visibleItems.map((item, idx) => (
-              <div className="banner-item" key={idx}>
-                <img className="banner-item-img" src={item.img} alt={`banner item ${idx + 1}`} />
-                {item.lottie1 && <Lottie className="banner-item-lottie-one" animationData={item.lottie1} />}
-                {item.lottie2 && <Lottie className="banner-item-lottie-two" animationData={item.lottie2} />}
+              <div className="sw-banner-item" key={idx}>
+                <img className="sw-banner-item-img" src={item.img} alt={`banner item ${idx + 1}`} />
+                {item.lottie1 && <Lottie className="sw-banner-item-lottie-one" animationData={item.lottie1} />}
+                {item.lottie2 && <Lottie className="sw-banner-item-lottie-two" animationData={item.lottie2} />}
               </div>
             ))}
           </div>

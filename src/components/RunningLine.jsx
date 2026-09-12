@@ -44,13 +44,13 @@ export default function RunningLine() {
   }, [scrollProgress, x]);
 
   return (
-    <div className="running-line" ref={r}>
-      <img className="running-line-bg" src="/image/concepts/concept-running-bg.png" alt="running line bg" />
-      <motion.div className="running-line-wrapper" style={{ x }}>
+    <div className="sw-running-line" ref={r}>
+      <img className="sw-running-line-bg" src="/image/concepts/concept-running-bg.png" alt="running line bg" />
+      <motion.div className="sw-running-line-wrapper" style={{ x }}>
         {[...ITEMS, ...ITEMS, ...ITEMS].map((item, idx) => (
-          <span className="running-line-item" key={idx}>
+          <span className="sw-running-line-item" key={idx}>
             {item}
-            <img className="running-line-dot" src="/image/concepts/concepts-running-dot.png" alt="dot" />
+            <img className="sw-running-line-dot" src="/image/concepts/concepts-running-dot.png" alt="dot" />
           </span>
         ))}
       </motion.div>

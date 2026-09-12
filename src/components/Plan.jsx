@@ -54,20 +54,20 @@ function PlanCard({ name, subtitle, subtitleBg, description, price, onClick }) {
   const slideY = useTransform(scrollYProgress, [0, 1], ['-35%', '0%']);
 
   return (
-    <div className="plan-card" ref={cardRef}>
-      <img className="plan-card-header" src="/image/plan/plan-card-header-bg.png" alt="header" />
-      <div className="plan-card-printing">
+    <div className="sw-plan-card" ref={cardRef}>
+      <img className="sw-plan-card-header" src="/image/plan/plan-card-header-bg.png" alt="header" />
+      <div className="sw-plan-card-printing">
         <motion.div
-          className="plan-card-content"
+          className="sw-plan-card-content"
           style={{ y: slideY, transformOrigin: 'top center' }}
         >
-          <img className="plan-card-content-bg" src="/image/plan/plan-card-bg.png" alt="card-bg" />
-          <h3 className="plan-card-title">{name}</h3>
-          <span className="plan-card-subtitle">
+          <img className="sw-plan-card-content-bg" src="/image/plan/plan-card-bg.png" alt="card-bg" />
+          <h3 className="sw-plan-card-title">{name}</h3>
+          <span className="sw-plan-card-subtitle">
             <p>{subtitle}</p>
-            <img className="plan-card-subtitle-bg" src={subtitleBg} alt="subtitle-bg" />
+            <img className="sw-plan-card-subtitle-bg" src={subtitleBg} alt="subtitle-bg" />
           </span>
-          <div className="plan-card-list">
+          <div className="sw-plan-card-list">
             <ul>
               {description.map((item, idx) => (
                 <li key={idx}>
@@ -79,13 +79,13 @@ function PlanCard({ name, subtitle, subtitleBg, description, price, onClick }) {
               ))}
             </ul>
           </div>
-          <button onClick={onClick} className="button yellow plan-card-button">
-            <span className="button-content">Get started</span>
+          <button onClick={onClick} className="sw-button sw-yellow sw-plan-card-button">
+            <span className="sw-button-content">Get started</span>
           </button>
-          <div className="plan-card-revisions">
-            <p className="plan-card-revisions-text">Hourly rate for extra revisions $30/hour</p>
+          <div className="sw-plan-card-revisions">
+            <p className="sw-plan-card-revisions-text">Hourly rate for extra revisions $30/hour</p>
           </div>
-          <div className="plan-card-price">
+          <div className="sw-plan-card-price">
             <span>from</span>
             <p>${price}</p>
           </div>
@@ -97,16 +97,16 @@ function PlanCard({ name, subtitle, subtitleBg, description, price, onClick }) {
 
 export default function Plan({ onOpenContact }) {
   return (
-    <section className="plan" id="plan">
-      <div className="container">
-        <div className="plan-content">
-          <h2 className="plan-title">
-            Pick <span className="brands"> The </span>Perfect <br />
-            Design Pla<span className="latter">n</span>
-            <img className="plan-title-bg" src="/image/plan/plan-title-bg.png" alt="title-bg" />
+    <section className="sw-plan" id="plan">
+      <div className="sw-container">
+        <div className="sw-plan-content">
+          <h2 className="sw-plan-title">
+            Pick <span className="sw-brands"> The </span>Perfect <br />
+            Design Pla<span className="sw-latter">n</span>
+            <img className="sw-plan-title-bg" src="/image/plan/plan-title-bg.png" alt="title-bg" />
           </h2>
 
-          <div className="plan-wrapper">
+          <div className="sw-plan-wrapper">
             {PLANS.map((plan, idx) => (
               <PlanCard
                 key={idx}
@@ -120,18 +120,18 @@ export default function Plan({ onOpenContact }) {
             ))}
           </div>
 
-          <div className="plan-meet">
-            <img className="plan-meet-bg" src="/image/plan/plan-meet-bg.png" alt="meet-bg" />
-            <h2 className="plan-meet-title">
-              <span className="text">
-                New <span className="brands">Here? </span>
+          <div className="sw-plan-meet">
+            <img className="sw-plan-meet-bg" src="/image/plan/plan-meet-bg.png" alt="meet-bg" />
+            <h2 className="sw-plan-meet-title">
+              <span className="sw-text">
+                New <span className="sw-brands">Here? </span>
                 <br />
-                Let'<span className="latter">s</span> meet
+                Let'<span className="sw-latter">s</span> meet
               </span>
-              <img className="plan-meet-title-bg" src="/image/plan/plan-card-meet-bg-mobile.png" alt="meet-bg" />
+              <img className="sw-plan-meet-title-bg" src="/image/plan/plan-card-meet-bg-mobile.png" alt="meet-bg" />
             </h2>
-            <button onClick={onOpenContact} className="button pink-big plan-meet-button">
-              <div className="button-content">Start the conversation. First consultation is free and friendly</div>
+            <button onClick={onOpenContact} className="sw-button sw-pink-big sw-plan-meet-button">
+              <div className="sw-button-content">Start the conversation. First consultation is free and friendly</div>
             </button>
           </div>
         </div>

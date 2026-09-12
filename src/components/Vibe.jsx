@@ -33,39 +33,39 @@ export default function Vibe() {
   };
 
   return (
-    <section className="vibe" onMouseMove={handleMouseMove}>
+    <section className="sw-vibe" onMouseMove={handleMouseMove}>
       <img
-        className="vibe-flowers"
+        className="sw-vibe-flowers"
         src="/image/vibe/vibe-flowers.png"
         alt="vibe-flowers"
       />
 
-      <div className="container">
-        <div className="vibe-label">
-          <Lottie className="vibe-label-lottie-one" animationData={lineThree} />
+      <div className="sw-container">
+        <div className="sw-vibe-label">
+          <Lottie className="sw-vibe-label-lottie-one" animationData={lineThree} />
           <img
-            className="vibe-label-img"
+            className="sw-vibe-label-img"
             src="/image/vibe/vibe-lable.png"
             alt="vibe-label"
           />
-          <Lottie className="vibe-label-lottie-two" animationData={boldLinesOne} />
+          <Lottie className="sw-vibe-label-lottie-two" animationData={boldLinesOne} />
         </div>
 
-        <div className="vibe-items">
+        <div className="sw-vibe-items">
           {VIBE_ITEMS.map((item, idx) => (
             <span
               key={idx}
-              className={`vibe-item ${activeItem === idx ? 'is-active' : ''}`}
+              className={`sw-vibe-item ${activeItem === idx ? 'sw-is-active' : ''}`}
             >
               <motion.img
-                className="vibe-item-main"
+                className="sw-vibe-item-main"
                 src={item.item}
                 alt="item"
                 animate={{ x: mouseOffset.x * 7, y: mouseOffset.y * 7 }}
                 transition={{ type: 'spring', stiffness: 20, damping: 20 }}
               />
               <motion.img
-                className="vibe-item-hover"
+                className="sw-vibe-item-hover"
                 src={item.itemHover}
                 alt="item-hover"
                 animate={{ x: mouseOffset.x * 7, y: mouseOffset.y * 7 }}

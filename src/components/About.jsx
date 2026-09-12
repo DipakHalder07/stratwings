@@ -2,12 +2,12 @@ import React from 'react';
 
 export default function About() {
   return (
-    <section id="about" className="about">
-      <div className="container">
+    <section id="about" className="sw-about">
+      <div className="sw-container">
         {/* Desktop Video Presentation */}
-        <div className="about-content">
+        <div className="sw-about-content">
           <video
-            className="about-video"
+            className="sw-about-video"
             autoPlay
             muted
             loop
@@ -21,14 +21,14 @@ export default function About() {
         </div>
 
         {/* Mobile Presentation */}
-        <div className="about-content-mobile">
-          <h2 className="about-content-mobile-title">
-            about <span className="the">The</span>TEA<span className="latter">M</span>
-            <img className="about-content-mobile-title-bg" src="/image/about/title-bg.png" alt="title-bg" />
+        <div className="sw-about-content-mobile">
+          <h2 className="sw-about-content-mobile-title">
+            about <span className="sw-the">The</span>TEA<span className="sw-latter">M</span>
+            <img className="sw-about-content-mobile-title-bg" src="/image/about/title-bg.png" alt="title-bg" />
           </h2>
-          <img src="/image/about/about-mobile1.png" className="page page-first" alt="about page" />
-          <img src="/image/about/about-mobile2.png" className="page" alt="about page" />
-          <img src="/image/about/about-mobile3.png" className="page" alt="about page" />
+          <img src="/image/about/about-mobile1.png" className="sw-page sw-page-first" alt="about page" />
+          <img src="/image/about/about-mobile2.png" className="sw-page" alt="about page" />
+          <img src="/image/about/about-mobile3.png" className="sw-page" alt="about page" />
         </div>
       </div>
     </section>

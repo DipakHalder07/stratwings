@@ -30,7 +30,7 @@ export default function PopupModal({ isOpen, onClose }) {
 
   return (
     <div
-      className="popup-portal"
+      className="sw-popup-portal"
       style={{
         display: 'flex',
         background: 'rgba(0,0,0,0.65)',
@@ -43,7 +43,7 @@ export default function PopupModal({ isOpen, onClose }) {
       }}
     >
       <div
-        className="popup-body"
+        className="sw-popup-body"
         style={{
           background: '#ffd905',
           borderRadius: '24px',
@@ -81,7 +81,7 @@ export default function PopupModal({ isOpen, onClose }) {
         </button>
 
         {!isSubmitted ? (
-          <form onSubmit={handleSubmit} className="popup-message-form">
+          <form onSubmit={handleSubmit} className="sw-popup-message-form">
             <h2
               style={{
                 fontFamily: 'Bebas Neue, sans-serif',
@@ -96,12 +96,12 @@ export default function PopupModal({ isOpen, onClose }) {
             </h2>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', width: '100%' }}>
-              <div className="input-wrapper">
-                <label className="input-label" style={{ fontWeight: 600 }}>Your Name *</label>
+              <div className="sw-input-wrapper">
+                <label className="sw-input-label" style={{ fontWeight: 600 }}>Your Name *</label>
                 <input
                   type="text"
                   required
-                  placeholder="Marina"
+                  placeholder="Your Name"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   style={{
@@ -116,8 +116,8 @@ export default function PopupModal({ isOpen, onClose }) {
                 />
               </div>
 
-              <div className="input-wrapper">
-                <label className="input-label" style={{ fontWeight: 600 }}>Telegram or Phone</label>
+              <div className="sw-input-wrapper">
+                <label className="sw-input-label" style={{ fontWeight: 600 }}>Telegram or Phone</label>
                 <input
                   type="text"
                   placeholder="@username"
@@ -135,8 +135,8 @@ export default function PopupModal({ isOpen, onClose }) {
                 />
               </div>
 
-              <div className="input-wrapper">
-                <label className="input-label" style={{ fontWeight: 600 }}>Email Address *</label>
+              <div className="sw-input-wrapper">
+                <label className="sw-input-label" style={{ fontWeight: 600 }}>Email Address *</label>
                 <input
                   type="email"
                   required
@@ -155,8 +155,8 @@ export default function PopupModal({ isOpen, onClose }) {
                 />
               </div>
 
-              <div className="textarea-wrapper">
-                <label className="textarea-label" style={{ fontWeight: 600 }}>Project Details</label>
+              <div className="sw-textarea-wrapper">
+                <label className="sw-textarea-label" style={{ fontWeight: 600 }}>Project Details</label>
                 <textarea
                   rows="3"
                   placeholder="Tell us about your brand, timeline, and goals..."
@@ -177,18 +177,18 @@ export default function PopupModal({ isOpen, onClose }) {
 
               <button
                 type="submit"
-                className="button pink-big"
+                className="sw-button sw-pink-big"
                 style={{ marginTop: '16px', width: '100%', cursor: 'pointer' }}
               >
-                <div className="button-content">SEND INQUIRY</div>
+                <div className="sw-button-content">SEND INQUIRY</div>
               </button>
             </div>
           </form>
         ) : (
-          <div className="popup-success" style={{ textAlign: 'center', padding: '20px 0' }}>
-            <div className="popup-success-target" style={{ position: 'relative', display: 'inline-block', margin: '0 auto 16px' }}>
-              <Lottie animationData={lineOne} className="popup-success-target-lottie" />
-              <img className="popup-success-target-img" src="/image/message/success/target.png" alt="target" />
+          <div className="sw-popup-success" style={{ textAlign: 'center', padding: '20px 0' }}>
+            <div className="sw-popup-success-target" style={{ position: 'relative', display: 'inline-block', margin: '0 auto 16px' }}>
+              <Lottie animationData={lineOne} className="sw-popup-success-target-lottie" />
+              <img className="sw-popup-success-target-img" src="/image/message/success/target.png" alt="target" />
             </div>
 
             <div style={{ position: 'relative', margin: '0 auto 16px' }}>
@@ -203,7 +203,7 @@ export default function PopupModal({ isOpen, onClose }) {
               >
                 MESSAGE SENT!
               </h2>
-              <Lottie className="popup-success-title-lottie" animationData={lineTwo} />
+              <Lottie className="sw-popup-success-title-lottie" animationData={lineTwo} />
             </div>
 
             <p style={{ fontSize: '18px', fontWeight: 600, marginBottom: '24px' }}>
@@ -211,7 +211,7 @@ export default function PopupModal({ isOpen, onClose }) {
             </p>
             <button
               onClick={handleReset}
-              className="button yellow"
+              className="sw-button sw-yellow"
               style={{ padding: '12px 28px', fontSize: '16px', cursor: 'pointer' }}
             >
               Done

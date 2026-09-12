@@ -38,14 +38,14 @@ export default function App() {
       <Header onOpenContact={() => setIsContactOpen(true)} />
 
       <main>
-        <div className="bg-first">
+        <div className="sw-bg-first">
           <Banner />
           <About />
         </div>
 
-        <div className="bg-second">
+        <div className="sw-bg-second">
           <Portfolio />
-          <div className="vibe-wrapper">
+          <div className="sw-vibe-wrapper">
             <Vibe />
             <Folders />
           </div>

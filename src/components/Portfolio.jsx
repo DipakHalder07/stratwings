@@ -38,24 +38,24 @@ const GROUPS = [
 
 const ALL_ITEMS = [
   // Pet
-  { img: '/image/portfolio/page-pet/item1.png', category: 'pet', lottie: lineOne, lottieClass: 'lottie-pet-one' },
+  { img: '/image/portfolio/page-pet/item1.png', category: 'pet', lottie: lineOne, lottieClass: 'sw-lottie-pet-one' },
   { img: '/image/portfolio/page-pet/item2.png', category: 'pet' },
-  { img: '/image/portfolio/page-pet/item3.png', category: 'pet', lottie: boldLinesOne, lottieClass: 'lottie-pet-two' },
+  { img: '/image/portfolio/page-pet/item3.png', category: 'pet', lottie: boldLinesOne, lottieClass: 'sw-lottie-pet-two' },
   { img: '/image/portfolio/page-pet/item4.png', category: 'pet' },
   // Food
-  { img: '/image/portfolio/page-food/item1.png', category: 'food', lottie: boldLinesOne, lottieClass: 'lottie-food-one' },
+  { img: '/image/portfolio/page-food/item1.png', category: 'food', lottie: boldLinesOne, lottieClass: 'sw-lottie-food-one' },
   { img: '/image/portfolio/page-food/item2.png', category: 'food' },
   { img: '/image/portfolio/page-food/item3.png', category: 'food' },
-  { img: '/image/portfolio/page-food/item4.png', category: 'food', lottie: lineTwo, lottieClass: 'lottie-food-two' },
+  { img: '/image/portfolio/page-food/item4.png', category: 'food', lottie: lineTwo, lottieClass: 'sw-lottie-food-two' },
   // Health
   { img: '/image/portfolio/page-health/item1.png', category: 'health' },
   { img: '/image/portfolio/page-health/item2.png', category: 'health' },
-  { img: '/image/portfolio/page-health/item3.png', category: 'health', lottie: lineOne, lottieClass: 'lottie-health-one' },
-  { img: '/image/portfolio/page-health/item4.png', category: 'health', lottie: boldLinesOne, lottieClass: 'lottie-health-two' },
+  { img: '/image/portfolio/page-health/item3.png', category: 'health', lottie: lineOne, lottieClass: 'sw-lottie-health-one' },
+  { img: '/image/portfolio/page-health/item4.png', category: 'health', lottie: boldLinesOne, lottieClass: 'sw-lottie-health-two' },
   // Lifestyle
   { img: '/image/portfolio/page-lifestyle/item1.png', category: 'lifestyle' },
-  { img: '/image/portfolio/page-lifestyle/item2.png', category: 'lifestyle', lottie: lineTwo, lottieClass: 'lottie-lifestyle-one' },
-  { img: '/image/portfolio/page-lifestyle/item3.png', category: 'lifestyle', lottie: boldLinesOne, lottieClass: 'lottie-lifestyle-two' },
+  { img: '/image/portfolio/page-lifestyle/item2.png', category: 'lifestyle', lottie: lineTwo, lottieClass: 'sw-lottie-lifestyle-one' },
+  { img: '/image/portfolio/page-lifestyle/item3.png', category: 'lifestyle', lottie: boldLinesOne, lottieClass: 'sw-lottie-lifestyle-two' },
   { img: '/image/portfolio/page-lifestyle/item4.png', category: 'lifestyle' }
 ];
 
@@ -72,19 +72,19 @@ export default function Portfolio() {
   };
 
   return (
-    <section className="portfolio" id="portfolio">
-      <div className="container">
-        <div className="portfolio-content">
-          <h2 className="portfolio-title">
-            <span className="brands">Our</span> Portfolio
-            <img className="portfolio-title-bg" src="/image/portfolio/portfolio-title-bg.png" alt="title-bg" />
+    <section className="sw-portfolio" id="portfolio">
+      <div className="sw-container">
+        <div className="sw-portfolio-content">
+          <h2 className="sw-portfolio-title">
+            <span className="sw-brands">Our</span> Portfolio
+            <img className="sw-portfolio-title-bg" src="/image/portfolio/portfolio-title-bg.png" alt="title-bg" />
           </h2>
 
-          <div className="portfolio-buttons">
+          <div className="sw-portfolio-buttons">
             {GROUPS.map((group) => (
               <button
                 key={group.name}
-                className={`portfolio-button ${activeTab === group.name ? 'active' : ''}`}
+                className={`sw-portfolio-button ${activeTab === group.name ? 'sw-active' : ''}`}
                 onClick={() => handleGroupClick(group)}
               >
                 <img src={group.bg} alt="bg" />
@@ -94,11 +94,11 @@ export default function Portfolio() {
             ))}
           </div>
 
-          <div className="portfolio-buttons-mobile">
+          <div className="sw-portfolio-buttons-mobile">
             {GROUPS.map((group) => (
               <button
                 key={`m-${group.name}`}
-                className={`portfolio-button ${activeTab === group.name ? 'active' : ''}`}
+                className={`sw-portfolio-button ${activeTab === group.name ? 'sw-active' : ''}`}
                 onClick={() => handleGroupClick(group)}
               >
                 <img src={group.bg} alt="bg" />
@@ -110,13 +110,13 @@ export default function Portfolio() {
         </div>
       </div>
 
-      <div className="portfolio-pages">
-        <img className="portfolio-cord" src="/image/portfolio/portfolio-cord.png" alt="cord" />
-        <img className="portfolio-cord-mobile" src="/image/portfolio/portfolio-cord.png" alt="cord" />
+      <div className="sw-portfolio-pages">
+        <img className="sw-portfolio-cord" src="/image/portfolio/portfolio-cord.png" alt="cord" />
+        <img className="sw-portfolio-cord-mobile" src="/image/portfolio/portfolio-cord.png" alt="cord" />
 
         <Swiper
           ref={swiperRef}
-          className="portfolio-pages-swiper"
+          className="sw-portfolio-pages-swiper"
           modules={[Autoplay]}
           spaceBetween={30}
           slidesPerView={4}
@@ -142,10 +142,10 @@ export default function Portfolio() {
         >
           {ALL_ITEMS.map((item, idx) => (
             <SwiperSlide key={idx}>
-              <div className={`portfolio-page-item item-${idx % 4}`}>
-                <div className="portfolio-page-item-img-wrapper">
+              <div className={`sw-portfolio-page-item sw-item-${idx % 4}`}>
+                <div className="sw-portfolio-page-item-img-wrapper">
                   <img
-                    className="portfolio-page-item-img"
+                    className="sw-portfolio-page-item-img"
                     src={item.img}
                     alt={`portfolio item ${idx + 1}`}
                     style={{
