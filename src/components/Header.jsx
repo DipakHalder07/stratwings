@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import stratwingsLogo from '../assets/lottie/logo/stratwings final logo.png';
 
 export default function Header({ onOpenContact }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -44,16 +45,18 @@ export default function Header({ onOpenContact }) {
       <div className="sw-container">
         <div className="sw-header-content">
           {/* Logo */}
-          <a className="sw-header-logo" href="#" onClick={handleLogoClick}>
-            <svg xmlns="http://www.w3.org/2000/svg" width="31" height="42" viewBox="0 0 31 42" fill="none">
-              <path d="M2.79007 20.0985L2.62891 38.9009L9.3665 39.0079L9.35387 40.6158H17.6682L17.6511 38.8727L24.1837 38.7398L24.4741 20.2968L2.79007 20.0985Z" fill="#FFD905" stroke="black" strokeMiterlimit="10"></path>
-              <path d="M0.600922 16.4371H6.54533L6.55276 24.7863H4.8082L2.34028 24.767L0.505859 24.7485L0.600922 16.4371Z" fill="#FFD905" stroke="black" strokeMiterlimit="10"></path>
-              <path d="M14.0772 28.3875L7.80078 3.93847L10.19 3.30942L9.76591 1.4453L12.7804 0.615723L13.3063 2.58308L15.7341 1.99191L21.8018 26.2545L14.0772 28.3875Z" fill="#FFD905" stroke="black" strokeMiterlimit="10"></path>
-              <path d="M5.58354 14.1875H12.509V25.2668H10.4273L7.5197 25.2408L5.49219 25.2207L5.58354 14.1875Z" fill="#FFD905" stroke="black" strokeMiterlimit="10"></path>
-              <path d="M15.6191 26.9512L21.5895 2.92106L23.9787 3.53154L24.4823 1.72534L27.5124 2.46357L27.0505 4.40716L29.4553 5.06814L23.3891 28.8383L15.6191 26.9512Z" fill="#FFD905" stroke="black" strokeMiterlimit="10"></path>
-              <path d="M24.2309 35.9251L24.398 25.2899L13.1635 22.2843L9.77539 23.0782V29.6658L14.9006 29.7512L14.9274 27.9554L18.1097 27.9138L24.3438 35.9251" fill="#FFD905"></path>
-              <path d="M24.2309 35.9251L24.398 25.2899L13.1635 22.2843L9.77539 23.0782V29.6658L14.9006 29.7512L14.9274 27.9554L18.1097 27.9138L24.3438 35.9251" stroke="black" strokeMiterlimit="10"></path>
-            </svg>
+          <a className="sw-header-logo" href="#" onClick={handleLogoClick} title="StratWings Home">
+            <img
+              src={stratwingsLogo}
+              alt="StratWings"
+              className="sw-header-logo-img"
+              style={{
+                height: '42px',
+                width: 'auto',
+                display: 'block',
+                objectFit: 'contain'
+              }}
+            />
           </a>
 
           {/* Desktop Nav */}
