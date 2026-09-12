@@ -45,7 +45,7 @@ export default function PopupModal({ isOpen, onClose }) {
       <div
         className="sw-popup-body"
         style={{
-          background: '#ffd905',
+          background: 'var(--sw-color-yellow, #ffd905)',
           borderRadius: '24px',
           border: '3px solid #000',
           boxShadow: '10px 10px 0px #000',
@@ -86,7 +86,7 @@ export default function PopupModal({ isOpen, onClose }) {
               style={{
                 fontFamily: 'Bebas Neue, sans-serif',
                 fontSize: '44px',
-                color: '#ff64d5',
+                color: 'var(--sw-color-pink, #ff64d5)',
                 WebkitTextStroke: '1px #000',
                 marginBottom: '24px',
                 textAlign: 'center'
@@ -196,7 +196,7 @@ export default function PopupModal({ isOpen, onClose }) {
                 style={{
                   fontFamily: 'Bebas Neue, sans-serif',
                   fontSize: '48px',
-                  color: '#ff64d5',
+                  color: 'var(--sw-color-pink, #ff64d5)',
                   WebkitTextStroke: '1px #000',
                   margin: 0
                 }}
