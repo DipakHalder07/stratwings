@@ -17,12 +17,18 @@ export default function App() {
 
   useEffect(() => {
     if (window.location.hash) {
-      const elem = document.querySelector(window.location.hash);
-      if (elem) {
-        setTimeout(() => {
-          elem.scrollIntoView({ behavior: 'smooth' });
-        }, 100);
-      }
+      const hash = window.location.hash;
+      setTimeout(() => {
+        if (window.__lenis) {
+          window.__lenis.scrollTo(hash, {
+            duration: 1.2,
+            easing: (x) => 1 - Math.pow(1 - x, 3)
+          });
+        } else {
+          const elem = document.querySelector(hash);
+          if (elem) elem.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 400);
     }
   }, []);
 

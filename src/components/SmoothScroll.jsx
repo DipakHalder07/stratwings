@@ -1,24 +1,44 @@
-import { useEffect } from 'react';
-import Lenis from 'lenis';
+import { useEffect, useRef } from 'react';
+import Lenis from '@studio-freight/lenis';
 
 export default function SmoothScroll() {
+  const lenisRef = useRef(null);
+
   useEffect(() => {
+    let rafId;
+    let resizeObserver;
+
     const lenis = new Lenis({
       duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      easing: (x) => 1 - Math.pow(1 - x, 3),
       smoothWheel: true
     });
 
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
+    lenisRef.current = lenis;
+    window.__lenis = lenis;
 
-    const rafId = requestAnimationFrame(raf);
+    const onRaf = (time) => {
+      lenis.raf(time);
+      rafId = requestAnimationFrame(onRaf);
+    };
+    rafId = requestAnimationFrame(onRaf);
+
+    resizeObserver = new ResizeObserver(() => {
+      const scrollPos = window.scrollY;
+      lenis.resize();
+      window.scrollTo(0, scrollPos);
+    });
+    resizeObserver.observe(document.body);
+
+    const onResize = () => lenis.resize();
+    window.addEventListener('resize', onResize);
 
     return () => {
+      window.removeEventListener('resize', onResize);
+      resizeObserver.disconnect();
       cancelAnimationFrame(rafId);
       lenis.destroy();
+      window.__lenis = null;
     };
   }, []);
 

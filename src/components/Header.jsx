@@ -15,9 +15,27 @@ export default function Header({ onOpenContact }) {
   const handleNavClick = (e, targetId) => {
     e.preventDefault();
     setIsMenuOpen(false);
-    const elem = document.querySelector(targetId);
-    if (elem) {
-      elem.scrollIntoView({ behavior: 'smooth' });
+    if (window.__lenis) {
+      window.__lenis.scrollTo(targetId, {
+        offset: 0,
+        duration: 1.2,
+        easing: (x) => 1 - Math.pow(1 - x, 3)
+      });
+    } else {
+      const elem = document.querySelector(targetId);
+      if (elem) elem.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleLogoClick = (e) => {
+    e.preventDefault();
+    if (window.__lenis) {
+      window.__lenis.scrollTo(0, {
+        duration: 1.2,
+        easing: (x) => 1 - Math.pow(1 - x, 3)
+      });
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
 
@@ -26,7 +44,7 @@ export default function Header({ onOpenContact }) {
       <div className="container">
         <div className="header-content">
           {/* Logo */}
-          <a className="header-logo" href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
+          <a className="header-logo" href="#" onClick={handleLogoClick}>
             <svg xmlns="http://www.w3.org/2000/svg" width="31" height="42" viewBox="0 0 31 42" fill="none">
               <path d="M2.79007 20.0985L2.62891 38.9009L9.3665 39.0079L9.35387 40.6158H17.6682L17.6511 38.8727L24.1837 38.7398L24.4741 20.2968L2.79007 20.0985Z" fill="#FFD905" stroke="black" strokeMiterlimit="10"></path>
               <path d="M0.600922 16.4371H6.54533L6.55276 24.7863H4.8082L2.34028 24.767L0.505859 24.7485L0.600922 16.4371Z" fill="#FFD905" stroke="black" strokeMiterlimit="10"></path>

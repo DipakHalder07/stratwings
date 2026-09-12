@@ -10,7 +10,14 @@ const NAV_LINKS = [
 
 export default function Footer({ onOpenContact }) {
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (window.__lenis) {
+      window.__lenis.scrollTo(0, {
+        duration: 1.2,
+        easing: (x) => 1 - Math.pow(1 - x, 3)
+      });
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   };
 
   const handleNavClick = (e, href) => {
@@ -19,8 +26,15 @@ export default function Footer({ onOpenContact }) {
       onOpenContact();
       return;
     }
-    const elem = document.querySelector(href);
-    if (elem) elem.scrollIntoView({ behavior: 'smooth' });
+    if (window.__lenis) {
+      window.__lenis.scrollTo(href, {
+        duration: 1.2,
+        easing: (x) => 1 - Math.pow(1 - x, 3)
+      });
+    } else {
+      const elem = document.querySelector(href);
+      if (elem) elem.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
