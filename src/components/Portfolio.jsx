@@ -6,28 +6,28 @@ import 'swiper/css';
 const GROUPS = [
   {
     name: 'pet',
-    title: 'Pet Products',
+    title: 'pet care',
     start: 0,
     bg: '/image/portfolio/portfolio-btn1.png',
     bgHover: '/image/portfolio/portfolio-btn1-hover.png'
   },
   {
     name: 'food',
-    title: 'Food & Drink',
+    title: 'food & beverage',
     start: 4,
     bg: '/image/portfolio/portfolio-btn2.png',
     bgHover: '/image/portfolio/portfolio-btn2-hover.png'
   },
   {
     name: 'health',
-    title: 'Health & Care',
+    title: 'health & wellness',
     start: 8,
     bg: '/image/portfolio/portfolio-btn3.png',
     bgHover: '/image/portfolio/portfolio-btn3-hover.png'
   },
   {
     name: 'lifestyle',
-    title: 'Lifestyle',
+    title: 'lifestyle & eco',
     start: 12,
     bg: '/image/portfolio/portfolio-btn4.png',
     bgHover: '/image/portfolio/portfolio-btn4-hover.png'
