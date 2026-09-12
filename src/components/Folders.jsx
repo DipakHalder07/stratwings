@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import Lottie from 'lottie-react';
+import { boldLinesOne, lineTwo, lineOne } from '../assets/lottie/animations';
 import {
   FolderNamingIcon,
   FolderLogoIcon,
@@ -9,9 +11,10 @@ import {
   Folder2DIcon
 } from './FolderIcons';
 
-function FolderItem({ size = 'big', context, title, autoplay }) {
+function FolderItem({ size = 'big', context, title, autoplay, lottie }) {
   return (
     <div className={`folders-item ${size}`}>
+      {lottie && <Lottie className="folders-item-lottie" animationData={lottie} />}
       <img className="folders-item-under" src="/image/folders/folder-main-big.png" alt="folder-bottom" />
       <img className={`folders-item-context ${autoplay ? 'autoplay' : ''}`} src={context} alt="folder-context" />
       <img className="folders-item-main" src="/image/folders/folder-ander-big.png" alt="folder-top" />
@@ -39,6 +42,7 @@ export default function Folders() {
             <br />
             in thi<span className="latter">S</span>
             <img className="folders-title-bg" src="/image/folders/folders-title-bg.png" alt="title-bg" />
+            <Lottie className="folders-title-lottie" animationData={boldLinesOne} />
           </h2>
 
           <div className="folders-wrapper">
@@ -47,6 +51,7 @@ export default function Folders() {
               title={<FolderNamingIcon />}
               context="/image/folders/context/folder-context1.png"
               autoplay={activeIdx === 0}
+              lottie={lineTwo}
             />
             <FolderItem
               size="small"
@@ -71,12 +76,14 @@ export default function Folders() {
               title={<FolderPackIcon />}
               context="/image/folders/context/folder-context5.png"
               autoplay={activeIdx === 4}
+              lottie={boldLinesOne}
             />
             <FolderItem
               size="small"
               title={<Folder3DIcon />}
               context="/image/folders/context/folder-context6.png"
               autoplay={activeIdx === 5}
+              lottie={lineOne}
             />
             <FolderItem
               size="big"

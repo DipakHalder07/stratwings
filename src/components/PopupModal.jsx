@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import Lottie from 'lottie-react';
+import { lineOne, lineTwo } from '../assets/lottie/animations';
 
 export default function PopupModal({ isOpen, onClose }) {
   const [formData, setFormData] = useState({
@@ -184,17 +186,26 @@ export default function PopupModal({ isOpen, onClose }) {
           </form>
         ) : (
           <div className="popup-success" style={{ textAlign: 'center', padding: '20px 0' }}>
-            <h2
-              style={{
-                fontFamily: 'Bebas Neue, sans-serif',
-                fontSize: '48px',
-                color: '#ff64d5',
-                WebkitTextStroke: '1px #000',
-                marginBottom: '16px'
-              }}
-            >
-              MESSAGE SENT!
-            </h2>
+            <div className="popup-success-target" style={{ position: 'relative', display: 'inline-block', margin: '0 auto 16px' }}>
+              <Lottie animationData={lineOne} className="popup-success-target-lottie" />
+              <img className="popup-success-target-img" src="/image/message/success/target.png" alt="target" />
+            </div>
+
+            <div style={{ position: 'relative', margin: '0 auto 16px' }}>
+              <h2
+                style={{
+                  fontFamily: 'Bebas Neue, sans-serif',
+                  fontSize: '48px',
+                  color: '#ff64d5',
+                  WebkitTextStroke: '1px #000',
+                  margin: 0
+                }}
+              >
+                MESSAGE SENT!
+              </h2>
+              <Lottie className="popup-success-title-lottie" animationData={lineTwo} />
+            </div>
+
             <p style={{ fontSize: '18px', fontWeight: 600, marginBottom: '24px' }}>
               Thank you, {formData.name}! We will review your inquiry and get back to you within 24 hours.
             </p>

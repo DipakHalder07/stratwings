@@ -1,6 +1,8 @@
 import React, { useState, useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
+import Lottie from 'lottie-react';
+import { lineOne, lineTwo, boldLinesOne } from '../assets/lottie/animations';
 import 'swiper/css';
 
 const GROUPS = [
@@ -36,24 +38,24 @@ const GROUPS = [
 
 const ALL_ITEMS = [
   // Pet
-  { img: '/image/portfolio/page-pet/item1.png', category: 'pet' },
+  { img: '/image/portfolio/page-pet/item1.png', category: 'pet', lottie: lineOne, lottieClass: 'lottie-pet-one' },
   { img: '/image/portfolio/page-pet/item2.png', category: 'pet' },
-  { img: '/image/portfolio/page-pet/item3.png', category: 'pet' },
+  { img: '/image/portfolio/page-pet/item3.png', category: 'pet', lottie: boldLinesOne, lottieClass: 'lottie-pet-two' },
   { img: '/image/portfolio/page-pet/item4.png', category: 'pet' },
   // Food
-  { img: '/image/portfolio/page-food/item1.png', category: 'food' },
+  { img: '/image/portfolio/page-food/item1.png', category: 'food', lottie: boldLinesOne, lottieClass: 'lottie-food-one' },
   { img: '/image/portfolio/page-food/item2.png', category: 'food' },
   { img: '/image/portfolio/page-food/item3.png', category: 'food' },
-  { img: '/image/portfolio/page-food/item4.png', category: 'food' },
+  { img: '/image/portfolio/page-food/item4.png', category: 'food', lottie: lineTwo, lottieClass: 'lottie-food-two' },
   // Health
   { img: '/image/portfolio/page-health/item1.png', category: 'health' },
   { img: '/image/portfolio/page-health/item2.png', category: 'health' },
-  { img: '/image/portfolio/page-health/item3.png', category: 'health' },
-  { img: '/image/portfolio/page-health/item4.png', category: 'health' },
+  { img: '/image/portfolio/page-health/item3.png', category: 'health', lottie: lineOne, lottieClass: 'lottie-health-one' },
+  { img: '/image/portfolio/page-health/item4.png', category: 'health', lottie: boldLinesOne, lottieClass: 'lottie-health-two' },
   // Lifestyle
   { img: '/image/portfolio/page-lifestyle/item1.png', category: 'lifestyle' },
-  { img: '/image/portfolio/page-lifestyle/item2.png', category: 'lifestyle' },
-  { img: '/image/portfolio/page-lifestyle/item3.png', category: 'lifestyle' },
+  { img: '/image/portfolio/page-lifestyle/item2.png', category: 'lifestyle', lottie: lineTwo, lottieClass: 'lottie-lifestyle-one' },
+  { img: '/image/portfolio/page-lifestyle/item3.png', category: 'lifestyle', lottie: boldLinesOne, lottieClass: 'lottie-lifestyle-two' },
   { img: '/image/portfolio/page-lifestyle/item4.png', category: 'lifestyle' }
 ];
 
@@ -151,6 +153,14 @@ export default function Portfolio() {
                       '--duration': `${0.9 + (idx % 4) * 0.2}s`
                     }}
                   />
+                  {item.lottie && (
+                    <Lottie
+                      animationData={item.lottie}
+                      className={item.lottieClass}
+                      loop={true}
+                      autoplay={true}
+                    />
+                  )}
                 </div>
               </div>
             </SwiperSlide>

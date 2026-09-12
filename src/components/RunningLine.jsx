@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useRef, useState, useEffect } from 'react';
+import { motion, useSpring } from 'framer-motion';
 
 const ITEMS = [
   'branding',
@@ -20,17 +21,39 @@ const ITEMS = [
 ];
 
 export default function RunningLine() {
+  const r = useRef(null);
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!r.current) return;
+      const rect = r.current.getBoundingClientRect();
+      const h = window.innerHeight;
+      const progress = Math.min(Math.max((h - rect.top) / (rect.height + h), 0), 1);
+      setScrollProgress(progress);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const x = useSpring(0, { stiffness: 100, damping: 40 });
+
+  useEffect(() => {
+    x.set(50 - scrollProgress * 100);
+  }, [scrollProgress, x]);
+
   return (
-    <div className="running-line">
+    <div className="running-line" ref={r}>
       <img className="running-line-bg" src="/image/concepts/concept-running-bg.png" alt="running line bg" />
-      <div className="running-line-wrapper">
+      <motion.div className="running-line-wrapper" style={{ x }}>
         {[...ITEMS, ...ITEMS, ...ITEMS].map((item, idx) => (
           <span className="running-line-item" key={idx}>
             {item}
             <img className="running-line-dot" src="/image/concepts/concepts-running-dot.png" alt="dot" />
           </span>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 }

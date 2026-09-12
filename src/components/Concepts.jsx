@@ -1,12 +1,14 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
+import Lottie from 'lottie-react';
+import { boldLinesOne } from '../assets/lottie/animations';
 
 const PRODUCTS_FIRST = [
-  '/image/concepts/product/product1.png',
-  '/image/concepts/product/product2.png',
-  '/image/concepts/product/product3.png',
-  '/image/concepts/product/product4.png',
-  '/image/concepts/product/product5.png'
+  { img: '/image/concepts/product/product1.png' },
+  { img: '/image/concepts/product/product2.png', lottie: boldLinesOne },
+  { img: '/image/concepts/product/product3.png' },
+  { img: '/image/concepts/product/product4.png', lottie: boldLinesOne },
+  { img: '/image/concepts/product/product5.png' }
 ];
 
 const PRODUCTS_SECOND = [
@@ -78,9 +80,10 @@ export default function Concepts({ onOpenContact }) {
               {/* Column 1 */}
               <motion.div className="concepts-products-inner" style={{ y: smoothY1 }}>
                 <div className="concepts-products-column">
-                  {PRODUCTS_FIRST.concat(PRODUCTS_FIRST).map((src, idx) => (
+                  {PRODUCTS_FIRST.concat(PRODUCTS_FIRST).map((item, idx) => (
                     <div key={`c1-${idx}`} className="concepts-product">
-                      <img src={src} alt={`concept product 1-${idx + 1}`} />
+                      <img src={item.img} alt={`concept product 1-${idx + 1}`} />
+                      {item.lottie && <Lottie className="concepts-product-lottie" animationData={item.lottie} />}
                     </div>
                   ))}
                 </div>
