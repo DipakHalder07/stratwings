@@ -3886,6 +3886,7 @@ main {
     background-size: cover;
     background-image: url(/assets/bg-first-Cpqbn9oc.png);
     overflow: clip;
+    contain: paint;
 }
 
 .sw-concepts-content {
@@ -3968,12 +3969,14 @@ main {
 
 .sw-concepts-title-bg {
     position: absolute;
-    width: 52vw;
+    width: 115%;
+    max-width: 615px;
     height: 134%;
     left: 50%;
     top: 34%;
     transform: translate(-50%, -50%);
     z-index: -1;
+    pointer-events: none;
 }
 
 .sw-concepts-subtitle {
@@ -4249,10 +4252,12 @@ main {
 
 .sw-plan {
     position: relative;
+    z-index: 1;
     width: 100%;
     background-size: cover;
     background-image: url(/assets/bg-first-Cpqbn9oc.png);
     padding: 90px 0 0;
+    contain: paint;
 }
 
 .sw-plan .sw-running-line {
@@ -4856,7 +4861,7 @@ main {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    z-index: -3;
+    z-index: 1;
 }
 
 .sw-feedback .sw-container {
