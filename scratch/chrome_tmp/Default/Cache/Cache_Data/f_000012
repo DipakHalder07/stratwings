@@ -1,0 +1,432 @@
+import { createHotContext as __vite__createHotContext } from "/@vite/client";import.meta.hot = __vite__createHotContext("/src/components/PopupModal.jsx");import __vite__cjsImport0_react_jsxDevRuntime from "/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=145c54c6"; const jsxDEV = __vite__cjsImport0_react_jsxDevRuntime["jsxDEV"];
+import * as RefreshRuntime from "/@react-refresh";
+const inWebWorker = typeof WorkerGlobalScope !== "undefined" && self instanceof WorkerGlobalScope;
+let prevRefreshReg;
+let prevRefreshSig;
+if (import.meta.hot && !inWebWorker) {
+  if (!window.$RefreshReg$) {
+    throw new Error(
+      "@vitejs/plugin-react can't detect preamble. Something is wrong."
+    );
+  }
+  prevRefreshReg = window.$RefreshReg$;
+  prevRefreshSig = window.$RefreshSig$;
+  window.$RefreshReg$ = RefreshRuntime.getRefreshReg("C:/Users/Ayushman/Downloads/Test/src/components/PopupModal.jsx");
+  window.$RefreshSig$ = RefreshRuntime.createSignatureFunctionForTransform;
+}
+var _s = $RefreshSig$();
+import __vite__cjsImport3_react from "/node_modules/.vite/deps/react.js?v=145c54c6"; const React = __vite__cjsImport3_react.__esModule ? __vite__cjsImport3_react.default : __vite__cjsImport3_react; const useState = __vite__cjsImport3_react["useState"];
+import Lottie from "/node_modules/.vite/deps/lottie-react.js?v=145c54c6";
+import { lineOne, lineTwo } from "/src/assets/lottie/animations.js";
+export default function PopupModal({ isOpen, onClose }) {
+  _s();
+  const [formData, setFormData] = useState({
+    name: "",
+    telegram: "",
+    email: "",
+    message: ""
+  });
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  if (!isOpen) return null;
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!formData.name || !formData.email) {
+      alert("Please provide your name and email.");
+      return;
+    }
+    setIsSubmitted(true);
+  };
+  const handleReset = () => {
+    setFormData({ name: "", telegram: "", email: "", message: "" });
+    setIsSubmitted(false);
+    onClose();
+  };
+  return /* @__PURE__ */ jsxDEV(
+    "div",
+    {
+      className: "sw-popup-portal",
+      style: {
+        display: "flex",
+        background: "rgba(0,0,0,0.65)",
+        backdropFilter: "blur(8px)",
+        alignItems: "center",
+        justifyContent: "center"
+      },
+      onClick: (e) => {
+        if (e.target === e.currentTarget) onClose();
+      },
+      children: /* @__PURE__ */ jsxDEV(
+        "div",
+        {
+          className: "sw-popup-body",
+          style: {
+            background: "var(--sw-color-yellow, #ffd905)",
+            borderRadius: "24px",
+            border: "3px solid #000",
+            boxShadow: "10px 10px 0px #000",
+            padding: "40px 32px",
+            maxWidth: "540px",
+            width: "90%",
+            position: "relative"
+          },
+          children: [
+            /* @__PURE__ */ jsxDEV(
+              "button",
+              {
+                onClick: onClose,
+                style: {
+                  position: "absolute",
+                  top: "16px",
+                  right: "16px",
+                  background: "#ff64d5",
+                  border: "2px solid #000",
+                  boxShadow: "2px 2px 0px #000",
+                  borderRadius: "50%",
+                  width: "38px",
+                  height: "38px",
+                  fontWeight: "bold",
+                  fontSize: "18px",
+                  cursor: "pointer",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center"
+                },
+                "aria-label": "Close modal",
+                children: "✕"
+              },
+              void 0,
+              false,
+              {
+                fileName: "C:/Users/Ayushman/Downloads/Test/src/components/PopupModal.jsx",
+                lineNumber: 78,
+                columnNumber: 9
+              },
+              this
+            ),
+            !isSubmitted ? /* @__PURE__ */ jsxDEV("form", { onSubmit: handleSubmit, className: "sw-popup-message-form", children: [
+              /* @__PURE__ */ jsxDEV(
+                "h2",
+                {
+                  style: {
+                    fontFamily: "Bebas Neue, sans-serif",
+                    fontSize: "44px",
+                    color: "var(--sw-color-pink, #ff64d5)",
+                    WebkitTextStroke: "1px #000",
+                    marginBottom: "24px",
+                    textAlign: "center"
+                  },
+                  children: "LEAVE A MESSAGE"
+                },
+                void 0,
+                false,
+                {
+                  fileName: "C:/Users/Ayushman/Downloads/Test/src/components/PopupModal.jsx",
+                  lineNumber: 104,
+                  columnNumber: 13
+                },
+                this
+              ),
+              /* @__PURE__ */ jsxDEV("div", { style: { display: "flex", flexDirection: "column", gap: "16px", width: "100%" }, children: [
+                /* @__PURE__ */ jsxDEV("div", { className: "sw-input-wrapper", children: [
+                  /* @__PURE__ */ jsxDEV("label", { className: "sw-input-label", style: { fontWeight: 600 }, children: "Your Name *" }, void 0, false, {
+                    fileName: "C:/Users/Ayushman/Downloads/Test/src/components/PopupModal.jsx",
+                    lineNumber: 119,
+                    columnNumber: 17
+                  }, this),
+                  /* @__PURE__ */ jsxDEV(
+                    "input",
+                    {
+                      type: "text",
+                      required: true,
+                      placeholder: "Your Name",
+                      value: formData.name,
+                      onChange: (e) => setFormData({ ...formData, name: e.target.value }),
+                      style: {
+                        width: "100%",
+                        padding: "12px 16px",
+                        borderRadius: "12px",
+                        border: "2px solid #000",
+                        background: "#fff",
+                        fontSize: "16px",
+                        outline: "none"
+                      }
+                    },
+                    void 0,
+                    false,
+                    {
+                      fileName: "C:/Users/Ayushman/Downloads/Test/src/components/PopupModal.jsx",
+                      lineNumber: 120,
+                      columnNumber: 17
+                    },
+                    this
+                  )
+                ] }, void 0, true, {
+                  fileName: "C:/Users/Ayushman/Downloads/Test/src/components/PopupModal.jsx",
+                  lineNumber: 118,
+                  columnNumber: 15
+                }, this),
+                /* @__PURE__ */ jsxDEV("div", { className: "sw-input-wrapper", children: [
+                  /* @__PURE__ */ jsxDEV("label", { className: "sw-input-label", style: { fontWeight: 600 }, children: "Telegram or Phone" }, void 0, false, {
+                    fileName: "C:/Users/Ayushman/Downloads/Test/src/components/PopupModal.jsx",
+                    lineNumber: 139,
+                    columnNumber: 17
+                  }, this),
+                  /* @__PURE__ */ jsxDEV(
+                    "input",
+                    {
+                      type: "text",
+                      placeholder: "@username",
+                      value: formData.telegram,
+                      onChange: (e) => setFormData({ ...formData, telegram: e.target.value }),
+                      style: {
+                        width: "100%",
+                        padding: "12px 16px",
+                        borderRadius: "12px",
+                        border: "2px solid #000",
+                        background: "#fff",
+                        fontSize: "16px",
+                        outline: "none"
+                      }
+                    },
+                    void 0,
+                    false,
+                    {
+                      fileName: "C:/Users/Ayushman/Downloads/Test/src/components/PopupModal.jsx",
+                      lineNumber: 140,
+                      columnNumber: 17
+                    },
+                    this
+                  )
+                ] }, void 0, true, {
+                  fileName: "C:/Users/Ayushman/Downloads/Test/src/components/PopupModal.jsx",
+                  lineNumber: 138,
+                  columnNumber: 15
+                }, this),
+                /* @__PURE__ */ jsxDEV("div", { className: "sw-input-wrapper", children: [
+                  /* @__PURE__ */ jsxDEV("label", { className: "sw-input-label", style: { fontWeight: 600 }, children: "Email Address *" }, void 0, false, {
+                    fileName: "C:/Users/Ayushman/Downloads/Test/src/components/PopupModal.jsx",
+                    lineNumber: 158,
+                    columnNumber: 17
+                  }, this),
+                  /* @__PURE__ */ jsxDEV(
+                    "input",
+                    {
+                      type: "email",
+                      required: true,
+                      placeholder: "hello@example.com",
+                      value: formData.email,
+                      onChange: (e) => setFormData({ ...formData, email: e.target.value }),
+                      style: {
+                        width: "100%",
+                        padding: "12px 16px",
+                        borderRadius: "12px",
+                        border: "2px solid #000",
+                        background: "#fff",
+                        fontSize: "16px",
+                        outline: "none"
+                      }
+                    },
+                    void 0,
+                    false,
+                    {
+                      fileName: "C:/Users/Ayushman/Downloads/Test/src/components/PopupModal.jsx",
+                      lineNumber: 159,
+                      columnNumber: 17
+                    },
+                    this
+                  )
+                ] }, void 0, true, {
+                  fileName: "C:/Users/Ayushman/Downloads/Test/src/components/PopupModal.jsx",
+                  lineNumber: 157,
+                  columnNumber: 15
+                }, this),
+                /* @__PURE__ */ jsxDEV("div", { className: "sw-textarea-wrapper", children: [
+                  /* @__PURE__ */ jsxDEV("label", { className: "sw-textarea-label", style: { fontWeight: 600 }, children: "Project Details" }, void 0, false, {
+                    fileName: "C:/Users/Ayushman/Downloads/Test/src/components/PopupModal.jsx",
+                    lineNumber: 178,
+                    columnNumber: 17
+                  }, this),
+                  /* @__PURE__ */ jsxDEV(
+                    "textarea",
+                    {
+                      rows: "3",
+                      placeholder: "Tell us about your brand, timeline, and goals...",
+                      value: formData.message,
+                      onChange: (e) => setFormData({ ...formData, message: e.target.value }),
+                      style: {
+                        width: "100%",
+                        padding: "12px 16px",
+                        borderRadius: "12px",
+                        border: "2px solid #000",
+                        background: "#fff",
+                        fontSize: "16px",
+                        outline: "none",
+                        resize: "vertical"
+                      }
+                    },
+                    void 0,
+                    false,
+                    {
+                      fileName: "C:/Users/Ayushman/Downloads/Test/src/components/PopupModal.jsx",
+                      lineNumber: 179,
+                      columnNumber: 17
+                    },
+                    this
+                  )
+                ] }, void 0, true, {
+                  fileName: "C:/Users/Ayushman/Downloads/Test/src/components/PopupModal.jsx",
+                  lineNumber: 177,
+                  columnNumber: 15
+                }, this),
+                /* @__PURE__ */ jsxDEV(
+                  "button",
+                  {
+                    type: "submit",
+                    className: "sw-button sw-pink-big",
+                    style: { marginTop: "16px", width: "100%", cursor: "pointer" },
+                    children: /* @__PURE__ */ jsxDEV("div", { className: "sw-button-content", children: "SEND INQUIRY" }, void 0, false, {
+                      fileName: "C:/Users/Ayushman/Downloads/Test/src/components/PopupModal.jsx",
+                      lineNumber: 202,
+                      columnNumber: 17
+                    }, this)
+                  },
+                  void 0,
+                  false,
+                  {
+                    fileName: "C:/Users/Ayushman/Downloads/Test/src/components/PopupModal.jsx",
+                    lineNumber: 197,
+                    columnNumber: 15
+                  },
+                  this
+                )
+              ] }, void 0, true, {
+                fileName: "C:/Users/Ayushman/Downloads/Test/src/components/PopupModal.jsx",
+                lineNumber: 117,
+                columnNumber: 13
+              }, this)
+            ] }, void 0, true, {
+              fileName: "C:/Users/Ayushman/Downloads/Test/src/components/PopupModal.jsx",
+              lineNumber: 103,
+              columnNumber: 9
+            }, this) : /* @__PURE__ */ jsxDEV("div", { className: "sw-popup-success", style: { textAlign: "center", padding: "20px 0" }, children: [
+              /* @__PURE__ */ jsxDEV("div", { className: "sw-popup-success-target", style: { position: "relative", display: "inline-block", margin: "0 auto 16px" }, children: [
+                /* @__PURE__ */ jsxDEV(Lottie, { animationData: lineOne, className: "sw-popup-success-target-lottie" }, void 0, false, {
+                  fileName: "C:/Users/Ayushman/Downloads/Test/src/components/PopupModal.jsx",
+                  lineNumber: 209,
+                  columnNumber: 15
+                }, this),
+                /* @__PURE__ */ jsxDEV("img", { className: "sw-popup-success-target-img", src: "/image/message/success/target.png", alt: "target" }, void 0, false, {
+                  fileName: "C:/Users/Ayushman/Downloads/Test/src/components/PopupModal.jsx",
+                  lineNumber: 210,
+                  columnNumber: 15
+                }, this)
+              ] }, void 0, true, {
+                fileName: "C:/Users/Ayushman/Downloads/Test/src/components/PopupModal.jsx",
+                lineNumber: 208,
+                columnNumber: 13
+              }, this),
+              /* @__PURE__ */ jsxDEV("div", { style: { position: "relative", margin: "0 auto 16px" }, children: [
+                /* @__PURE__ */ jsxDEV(
+                  "h2",
+                  {
+                    style: {
+                      fontFamily: "Bebas Neue, sans-serif",
+                      fontSize: "48px",
+                      color: "var(--sw-color-pink, #ff64d5)",
+                      WebkitTextStroke: "1px #000",
+                      margin: 0
+                    },
+                    children: "MESSAGE SENT!"
+                  },
+                  void 0,
+                  false,
+                  {
+                    fileName: "C:/Users/Ayushman/Downloads/Test/src/components/PopupModal.jsx",
+                    lineNumber: 214,
+                    columnNumber: 15
+                  },
+                  this
+                ),
+                /* @__PURE__ */ jsxDEV(Lottie, { className: "sw-popup-success-title-lottie", animationData: lineTwo }, void 0, false, {
+                  fileName: "C:/Users/Ayushman/Downloads/Test/src/components/PopupModal.jsx",
+                  lineNumber: 225,
+                  columnNumber: 15
+                }, this)
+              ] }, void 0, true, {
+                fileName: "C:/Users/Ayushman/Downloads/Test/src/components/PopupModal.jsx",
+                lineNumber: 213,
+                columnNumber: 13
+              }, this),
+              /* @__PURE__ */ jsxDEV("p", { style: { fontSize: "18px", fontWeight: 600, marginBottom: "24px" }, children: [
+                "Thank you, ",
+                formData.name,
+                "! We will review your inquiry and get back to you within 24 hours."
+              ] }, void 0, true, {
+                fileName: "C:/Users/Ayushman/Downloads/Test/src/components/PopupModal.jsx",
+                lineNumber: 228,
+                columnNumber: 13
+              }, this),
+              /* @__PURE__ */ jsxDEV(
+                "button",
+                {
+                  onClick: handleReset,
+                  className: "sw-button sw-yellow",
+                  style: { padding: "12px 28px", fontSize: "16px", cursor: "pointer" },
+                  children: "Done"
+                },
+                void 0,
+                false,
+                {
+                  fileName: "C:/Users/Ayushman/Downloads/Test/src/components/PopupModal.jsx",
+                  lineNumber: 231,
+                  columnNumber: 13
+                },
+                this
+              )
+            ] }, void 0, true, {
+              fileName: "C:/Users/Ayushman/Downloads/Test/src/components/PopupModal.jsx",
+              lineNumber: 207,
+              columnNumber: 9
+            }, this)
+          ]
+        },
+        void 0,
+        true,
+        {
+          fileName: "C:/Users/Ayushman/Downloads/Test/src/components/PopupModal.jsx",
+          lineNumber: 64,
+          columnNumber: 7
+        },
+        this
+      )
+    },
+    void 0,
+    false,
+    {
+      fileName: "C:/Users/Ayushman/Downloads/Test/src/components/PopupModal.jsx",
+      lineNumber: 51,
+      columnNumber: 5
+    },
+    this
+  );
+}
+_s(PopupModal, "htmE273xZSRB/WoG4KAeXhP8low=");
+_c = PopupModal;
+var _c;
+$RefreshReg$(_c, "PopupModal");
+if (import.meta.hot && !inWebWorker) {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+if (import.meta.hot && !inWebWorker) {
+  RefreshRuntime.__hmr_import(import.meta.url).then((currentExports) => {
+    RefreshRuntime.registerExportsForReactRefresh("C:/Users/Ayushman/Downloads/Test/src/components/PopupModal.jsx", currentExports);
+    import.meta.hot.accept((nextExports) => {
+      if (!nextExports) return;
+      const invalidateMessage = RefreshRuntime.validateRefreshBoundaryAndEnqueueUpdate("C:/Users/Ayushman/Downloads/Test/src/components/PopupModal.jsx", currentExports, nextExports);
+      if (invalidateMessage) import.meta.hot.invalidate(invalidateMessage);
+    });
+  });
+}
+
+//# sourceMappingURL=data:application/json;base64,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LGlCQTlCRjtBQUFBO0FBQUE7QUFBQTtBQUFBLG1CQStCQTtBQUFBO0FBQUE7QUFBQSxRQTlLSjtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUEsTUFnTEE7QUFBQTtBQUFBLElBN0xGO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQSxFQThMQTtBQUVKO0FBQUNqQyxHQTNOdUJILFlBQVU7QUFBQSxLQUFWQTtBQUFVLElBQUFpRDtBQUFBLGFBQUFBLElBQUEiLCJuYW1lcyI6WyJSZWFjdCIsInVzZVN0YXRlIiwiTG90dGllIiwibGluZU9uZSIsImxpbmVUd28iLCJQb3B1cE1vZGFsIiwiaXNPcGVuIiwib25DbG9zZSIsIl9zIiwiZm9ybURhdGEiLCJzZXRGb3JtRGF0YSIsIm5hbWUiLCJ0ZWxlZ3JhbSIsImVtYWlsIiwibWVzc2FnZSIsImlzU3VibWl0dGVkIiwic2V0SXNTdWJtaXR0ZWQiLCJoYW5kbGVTdWJtaXQiLCJlIiwicHJldmVudERlZmF1bHQiLCJhbGVydCIsImhhbmRsZVJlc2V0IiwiZGlzcGxheSIsImJhY2tncm91bmQiLCJiYWNrZHJvcEZpbHRlciIsImFsaWduSXRlbXMiLCJqdXN0aWZ5Q29udGVudCIsInRhcmdldCIsImN1cnJlbnRUYXJnZXQiLCJib3JkZXJSYWRpdXMiLCJib3JkZXIiLCJib3hTaGFkb3ciLCJwYWRkaW5nIiwibWF4V2lkdGgiLCJ3aWR0aCIsInBvc2l0aW9uIiwidG9wIiwicmlnaHQiLCJoZWlnaHQiLCJmb250V2VpZ2h0IiwiZm9udFNpemUiLCJjdXJzb3IiLCJmb250RmFtaWx5IiwiY29sb3IiLCJXZWJraXRUZXh0U3Ryb2tlIiwibWFyZ2luQm90dG9tIiwidGV4dEFsaWduIiwiZmxleERpcmVjdGlvbiIsImdhcCIsInZhbHVlIiwib3V0bGluZSIsInJlc2l6ZSIsIm1hcmdpblRvcCIsIm1hcmdpbiIsIl9jIl0sImlnbm9yZUxpc3QiOltdLCJzb3VyY2VzIjpbIlBvcHVwTW9kYWwuanN4Il0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBSZWFjdCwgeyB1c2VTdGF0ZSB9IGZyb20gJ3JlYWN0JztcbmltcG9ydCBMb3R0aWUgZnJvbSAnbG90dGllLXJlYWN0JztcbmltcG9ydCB7IGxpbmVPbmUsIGxpbmVUd28gfSBmcm9tICcuLi9hc3NldHMvbG90dGllL2FuaW1hdGlvbnMnO1xuXG5leHBvcnQgZGVmYXVsdCBmdW5jdGlvbiBQb3B1cE1vZGFsKHsgaXNPcGVuLCBvbkNsb3NlIH0pIHtcbiAgY29uc3QgW2Zvcm1EYXRhLCBzZXRGb3JtRGF0YV0gPSB1c2VTdGF0ZSh7XG4gICAgbmFtZTogJycsXG4gICAgdGVsZWdyYW06ICcnLFxuICAgIGVtYWlsOiAnJyxcbiAgICBtZXNzYWdlOiAnJ1xuICB9KTtcbiAgY29uc3QgW2lzU3VibWl0dGVkLCBzZXRJc1N1Ym1pdHRlZF0gPSB1c2VTdGF0ZShmYWxzZSk7XG5cbiAgaWYgKCFpc09wZW4pIHJldHVybiBudWxsO1xuXG4gIGNvbnN0IGhhbmRsZVN1Ym1pdCA9IChlKSA9PiB7XG4gICAgZS5wcmV2ZW50RGVmYXVsdCgpO1xuICAgIGlmICghZm9ybURhdGEubmFtZSB8fCAhZm9ybURhdGEuZW1haWwpIHtcbiAgICAgIGFsZXJ0KCdQbGVhc2UgcHJvdmlkZSB5b3VyIG5hbWUgYW5kIGVtYWlsLicpO1xuICAgICAgcmV0dXJuO1xuICAgIH1cbiAgICBzZXRJc1N1Ym1pdHRlZCh0cnVlKTtcbiAgfTtcblxuICBjb25zdCBoYW5kbGVSZXNldCA9ICgpID0+IHtcbiAgICBzZXRGb3JtRGF0YSh7IG5hbWU6ICcnLCB0ZWxlZ3JhbTogJycsIGVtYWlsOiAnJywgbWVzc2FnZTogJycgfSk7XG4gICAgc2V0SXNTdWJtaXR0ZWQoZmFsc2UpO1xuICAgIG9uQ2xvc2UoKTtcbiAgfTtcblxuICByZXR1cm4gKFxuICAgIDxkaXZcbiAgICAgIGNsYXNzTmFtZT1cInN3LXBvcHVwLXBvcnRhbFwiXG4gICAgICBzdHlsZT17e1xuICAgICAgICBkaXNwbGF5OiAnZmxleCcsXG4gICAgICAgIGJhY2tncm91bmQ6ICdyZ2JhKDAsMCwwLDAuNjUpJyxcbiAgICAgICAgYmFja2Ryb3BGaWx0ZXI6ICdibHVyKDhweCknLFxuICAgICAgICBhbGlnbkl0ZW1zOiAnY2VudGVyJyxcbiAgICAgICAganVzdGlmeUNvbnRlbnQ6ICdjZW50ZXInXG4gICAgICB9fVxuICAgICAgb25DbGljaz17KGUpID0+IHtcbiAgICAgICAgaWYgKGUudGFyZ2V0ID09PSBlLmN1cnJlbnRUYXJnZXQpIG9uQ2xvc2UoKTtcbiAgICAgIH19XG4gICAgPlxuICAgICAgPGRpdlxuICAgICAgICBjbGFzc05hbWU9XCJzdy1wb3B1cC1ib2R5XCJcbiAgICAgICAgc3R5bGU9e3tcbiAgICAgICAgICBiYWNrZ3JvdW5kOiAndmFyKC0tc3ctY29sb3IteWVsbG93LCAjZmZkOTA1KScsXG4gICAgICAgICAgYm9yZGVyUmFkaXVzOiAnMjRweCcsXG4gICAgICAgICAgYm9yZGVyOiAnM3B4IHNvbGlkICMwMDAnLFxuICAgICAgICAgIGJveFNoYWRvdzogJzEwcHggMTBweCAwcHggIzAwMCcsXG4gICAgICAgICAgcGFkZGluZzogJzQwcHggMzJweCcsXG4gICAgICAgICAgbWF4V2lkdGg6ICc1NDBweCcsXG4gICAgICAgICAgd2lkdGg6ICc5MCUnLFxuICAgICAgICAgIHBvc2l0aW9uOiAncmVsYXRpdmUnXG4gICAgICAgIH19XG4gICAgICA+XG4gICAgICAgIHsvKiBDbG9zZSBCdXR0b24gKi99XG4gICAgICAgIDxidXR0b25cbiAgICAgICAgICBvbkNsaWNrPXtvbkNsb3NlfVxuICAgICAgICAgIHN0eWxlPXt7XG4gICAgICAgICAgICBwb3NpdGlvbjogJ2Fic29sdXRlJyxcbiAgICAgICAgICAgIHRvcDogJzE2cHgnLFxuICAgICAgICAgICAgcmlnaHQ6ICcxNnB4JyxcbiAgICAgICAgICAgIGJhY2tncm91bmQ6ICcjZmY2NGQ1JyxcbiAgICAgICAgICAgIGJvcmRlcjogJzJweCBzb2xpZCAjMDAwJyxcbiAgICAgICAgICAgIGJveFNoYWRvdzogJzJweCAycHggMHB4ICMwMDAnLFxuICAgICAgICAgICAgYm9yZGVyUmFkaXVzOiAnNTAlJyxcbiAgICAgICAgICAgIHdpZHRoOiAnMzhweCcsXG4gICAgICAgICAgICBoZWlnaHQ6ICczOHB4JyxcbiAgICAgICAgICAgIGZvbnRXZWlnaHQ6ICdib2xkJyxcbiAgICAgICAgICAgIGZvbnRTaXplOiAnMThweCcsXG4gICAgICAgICAgICBjdXJzb3I6ICdwb2ludGVyJyxcbiAgICAgICAgICAgIGRpc3BsYXk6ICdmbGV4JyxcbiAgICAgICAgICAgIGFsaWduSXRlbXM6ICdjZW50ZXInLFxuICAgICAgICAgICAganVzdGlmeUNvbnRlbnQ6ICdjZW50ZXInXG4gICAgICAgICAgfX1cbiAgICAgICAgICBhcmlhLWxhYmVsPVwiQ2xvc2UgbW9kYWxcIlxuICAgICAgICA+XG4gICAgICAgICAg4pyVXG4gICAgICAgIDwvYnV0dG9uPlxuXG4gICAgICAgIHshaXNTdWJtaXR0ZWQgPyAoXG4gICAgICAgICAgPGZvcm0gb25TdWJtaXQ9e2hhbmRsZVN1Ym1pdH0gY2xhc3NOYW1lPVwic3ctcG9wdXAtbWVzc2FnZS1mb3JtXCI+XG4gICAgICAgICAgICA8aDJcbiAgICAgICAgICAgICAgc3R5bGU9e3tcbiAgICAgICAgICAgICAgICBmb250RmFtaWx5OiAnQmViYXMgTmV1ZSwgc2Fucy1zZXJpZicsXG4gICAgICAgICAgICAgICAgZm9udFNpemU6ICc0NHB4JyxcbiAgICAgICAgICAgICAgICBjb2xvcjogJ3ZhcigtLXN3LWNvbG9yLXBpbmssICNmZjY0ZDUpJyxcbiAgICAgICAgICAgICAgICBXZWJraXRUZXh0U3Ryb2tlOiAnMXB4ICMwMDAnLFxuICAgICAgICAgICAgICAgIG1hcmdpbkJvdHRvbTogJzI0cHgnLFxuICAgICAgICAgICAgICAgIHRleHRBbGlnbjogJ2NlbnRlcidcbiAgICAgICAgICAgICAgfX1cbiAgICAgICAgICAgID5cbiAgICAgICAgICAgICAgTEVBVkUgQSBNRVNTQUdFXG4gICAgICAgICAgICA8L2gyPlxuXG4gICAgICAgICAgICA8ZGl2IHN0eWxlPXt7IGRpc3BsYXk6ICdmbGV4JywgZmxleERpcmVjdGlvbjogJ2NvbHVtbicsIGdhcDogJzE2cHgnLCB3aWR0aDogJzEwMCUnIH19PlxuICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cInN3LWlucHV0LXdyYXBwZXJcIj5cbiAgICAgICAgICAgICAgICA8bGFiZWwgY2xhc3NOYW1lPVwic3ctaW5wdXQtbGFiZWxcIiBzdHlsZT17eyBmb250V2VpZ2h0OiA2MDAgfX0+WW91ciBOYW1lICo8L2xhYmVsPlxuICAgICAgICAgICAgICAgIDxpbnB1dFxuICAgICAgICAgICAgICAgICAgdHlwZT1cInRleHRcIlxuICAgICAgICAgICAgICAgICAgcmVxdWlyZWRcbiAgICAgICAgICAgICAgICAgIHBsYWNlaG9sZGVyPVwiWW91ciBOYW1lXCJcbiAgICAgICAgICAgICAgICAgIHZhbHVlPXtmb3JtRGF0YS5uYW1lfVxuICAgICAgICAgICAgICAgICAgb25DaGFuZ2U9eyhlKSA9PiBzZXRGb3JtRGF0YSh7IC4uLmZvcm1EYXRhLCBuYW1lOiBlLnRhcmdldC52YWx1ZSB9KX1cbiAgICAgICAgICAgICAgICAgIHN0eWxlPXt7XG4gICAgICAgICAgICAgICAgICAgIHdpZHRoOiAnMTAwJScsXG4gICAgICAgICAgICAgICAgICAgIHBhZGRpbmc6ICcxMnB4IDE2cHgnLFxuICAgICAgICAgICAgICAgICAgICBib3JkZXJSYWRpdXM6ICcxMnB4JyxcbiAgICAgICAgICAgICAgICAgICAgYm9yZGVyOiAnMnB4IHNvbGlkICMwMDAnLFxuICAgICAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kOiAnI2ZmZicsXG4gICAgICAgICAgICAgICAgICAgIGZvbnRTaXplOiAnMTZweCcsXG4gICAgICAgICAgICAgICAgICAgIG91dGxpbmU6ICdub25lJ1xuICAgICAgICAgICAgICAgICAgfX1cbiAgICAgICAgICAgICAgICAvPlxuICAgICAgICAgICAgICA8L2Rpdj5cblxuICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cInN3LWlucHV0LXdyYXBwZXJcIj5cbiAgICAgICAgICAgICAgICA8bGFiZWwgY2xhc3NOYW1lPVwic3ctaW5wdXQtbGFiZWxcIiBzdHlsZT17eyBmb250V2VpZ2h0OiA2MDAgfX0+VGVsZWdyYW0gb3IgUGhvbmU8L2xhYmVsPlxuICAgICAgICAgICAgICAgIDxpbnB1dFxuICAgICAgICAgICAgICAgICAgdHlwZT1cInRleHRcIlxuICAgICAgICAgICAgICAgICAgcGxhY2Vob2xkZXI9XCJAdXNlcm5hbWVcIlxuICAgICAgICAgICAgICAgICAgdmFsdWU9e2Zvcm1EYXRhLnRlbGVncmFtfVxuICAgICAgICAgICAgICAgICAgb25DaGFuZ2U9eyhlKSA9PiBzZXRGb3JtRGF0YSh7IC4uLmZvcm1EYXRhLCB0ZWxlZ3JhbTogZS50YXJnZXQudmFsdWUgfSl9XG4gICAgICAgICAgICAgICAgICBzdHlsZT17e1xuICAgICAgICAgICAgICAgICAgICB3aWR0aDogJzEwMCUnLFxuICAgICAgICAgICAgICAgICAgICBwYWRkaW5nOiAnMTJweCAxNnB4JyxcbiAgICAgICAgICAgICAgICAgICAgYm9yZGVyUmFkaXVzOiAnMTJweCcsXG4gICAgICAgICAgICAgICAgICAgIGJvcmRlcjogJzJweCBzb2xpZCAjMDAwJyxcbiAgICAgICAgICAgICAgICAgICAgYmFja2dyb3VuZDogJyNmZmYnLFxuICAgICAgICAgICAgICAgICAgICBmb250U2l6ZTogJzE2cHgnLFxuICAgICAgICAgICAgICAgICAgICBvdXRsaW5lOiAnbm9uZSdcbiAgICAgICAgICAgICAgICAgIH19XG4gICAgICAgICAgICAgICAgLz5cbiAgICAgICAgICAgICAgPC9kaXY+XG5cbiAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJzdy1pbnB1dC13cmFwcGVyXCI+XG4gICAgICAgICAgICAgICAgPGxhYmVsIGNsYXNzTmFtZT1cInN3LWlucHV0LWxhYmVsXCIgc3R5bGU9e3sgZm9udFdlaWdodDogNjAwIH19PkVtYWlsIEFkZHJlc3MgKjwvbGFiZWw+XG4gICAgICAgICAgICAgICAgPGlucHV0XG4gICAgICAgICAgICAgICAgICB0eXBlPVwiZW1haWxcIlxuICAgICAgICAgICAgICAgICAgcmVxdWlyZWRcbiAgICAgICAgICAgICAgICAgIHBsYWNlaG9sZGVyPVwiaGVsbG9AZXhhbXBsZS5jb21cIlxuICAgICAgICAgICAgICAgICAgdmFsdWU9e2Zvcm1EYXRhLmVtYWlsfVxuICAgICAgICAgICAgICAgICAgb25DaGFuZ2U9eyhlKSA9PiBzZXRGb3JtRGF0YSh7IC4uLmZvcm1EYXRhLCBlbWFpbDogZS50YXJnZXQudmFsdWUgfSl9XG4gICAgICAgICAgICAgICAgICBzdHlsZT17e1xuICAgICAgICAgICAgICAgICAgICB3aWR0aDogJzEwMCUnLFxuICAgICAgICAgICAgICAgICAgICBwYWRkaW5nOiAnMTJweCAxNnB4JyxcbiAgICAgICAgICAgICAgICAgICAgYm9yZGVyUmFkaXVzOiAnMTJweCcsXG4gICAgICAgICAgICAgICAgICAgIGJvcmRlcjogJzJweCBzb2xpZCAjMDAwJyxcbiAgICAgICAgICAgICAgICAgICAgYmFja2dyb3VuZDogJyNmZmYnLFxuICAgICAgICAgICAgICAgICAgICBmb250U2l6ZTogJzE2cHgnLFxuICAgICAgICAgICAgICAgICAgICBvdXRsaW5lOiAnbm9uZSdcbiAgICAgICAgICAgICAgICAgIH19XG4gICAgICAgICAgICAgICAgLz5cbiAgICAgICAgICAgICAgPC9kaXY+XG5cbiAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJzdy10ZXh0YXJlYS13cmFwcGVyXCI+XG4gICAgICAgICAgICAgICAgPGxhYmVsIGNsYXNzTmFtZT1cInN3LXRleHRhcmVhLWxhYmVsXCIgc3R5bGU9e3sgZm9udFdlaWdodDogNjAwIH19PlByb2plY3QgRGV0YWlsczwvbGFiZWw+XG4gICAgICAgICAgICAgICAgPHRleHRhcmVhXG4gICAgICAgICAgICAgICAgICByb3dzPVwiM1wiXG4gICAgICAgICAgICAgICAgICBwbGFjZWhvbGRlcj1cIlRlbGwgdXMgYWJvdXQgeW91ciBicmFuZCwgdGltZWxpbmUsIGFuZCBnb2Fscy4uLlwiXG4gICAgICAgICAgICAgICAgICB2YWx1ZT17Zm9ybURhdGEubWVzc2FnZX1cbiAgICAgICAgICAgICAgICAgIG9uQ2hhbmdlPXsoZSkgPT4gc2V0Rm9ybURhdGEoeyAuLi5mb3JtRGF0YSwgbWVzc2FnZTogZS50YXJnZXQudmFsdWUgfSl9XG4gICAgICAgICAgICAgICAgICBzdHlsZT17e1xuICAgICAgICAgICAgICAgICAgICB3aWR0aDogJzEwMCUnLFxuICAgICAgICAgICAgICAgICAgICBwYWRkaW5nOiAnMTJweCAxNnB4JyxcbiAgICAgICAgICAgICAgICAgICAgYm9yZGVyUmFkaXVzOiAnMTJweCcsXG4gICAgICAgICAgICAgICAgICAgIGJvcmRlcjogJzJweCBzb2xpZCAjMDAwJyxcbiAgICAgICAgICAgICAgICAgICAgYmFja2dyb3VuZDogJyNmZmYnLFxuICAgICAgICAgICAgICAgICAgICBmb250U2l6ZTogJzE2cHgnLFxuICAgICAgICAgICAgICAgICAgICBvdXRsaW5lOiAnbm9uZScsXG4gICAgICAgICAgICAgICAgICAgIHJlc2l6ZTogJ3ZlcnRpY2FsJ1xuICAgICAgICAgICAgICAgICAgfX1cbiAgICAgICAgICAgICAgICAvPlxuICAgICAgICAgICAgICA8L2Rpdj5cblxuICAgICAgICAgICAgICA8YnV0dG9uXG4gICAgICAgICAgICAgICAgdHlwZT1cInN1Ym1pdFwiXG4gICAgICAgICAgICAgICAgY2xhc3NOYW1lPVwic3ctYnV0dG9uIHN3LXBpbmstYmlnXCJcbiAgICAgICAgICAgICAgICBzdHlsZT17eyBtYXJnaW5Ub3A6ICcxNnB4Jywgd2lkdGg6ICcxMDAlJywgY3Vyc29yOiAncG9pbnRlcicgfX1cbiAgICAgICAgICAgICAgPlxuICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwic3ctYnV0dG9uLWNvbnRlbnRcIj5TRU5EIElOUVVJUlk8L2Rpdj5cbiAgICAgICAgICAgICAgPC9idXR0b24+XG4gICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICA8L2Zvcm0+XG4gICAgICAgICkgOiAoXG4gICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJzdy1wb3B1cC1zdWNjZXNzXCIgc3R5bGU9e3sgdGV4dEFsaWduOiAnY2VudGVyJywgcGFkZGluZzogJzIwcHggMCcgfX0+XG4gICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cInN3LXBvcHVwLXN1Y2Nlc3MtdGFyZ2V0XCIgc3R5bGU9e3sgcG9zaXRpb246ICdyZWxhdGl2ZScsIGRpc3BsYXk6ICdpbmxpbmUtYmxvY2snLCBtYXJnaW46ICcwIGF1dG8gMTZweCcgfX0+XG4gICAgICAgICAgICAgIDxMb3R0aWUgYW5pbWF0aW9uRGF0YT17bGluZU9uZX0gY2xhc3NOYW1lPVwic3ctcG9wdXAtc3VjY2Vzcy10YXJnZXQtbG90dGllXCIgLz5cbiAgICAgICAgICAgICAgPGltZyBjbGFzc05hbWU9XCJzdy1wb3B1cC1zdWNjZXNzLXRhcmdldC1pbWdcIiBzcmM9XCIvaW1hZ2UvbWVzc2FnZS9zdWNjZXNzL3RhcmdldC5wbmdcIiBhbHQ9XCJ0YXJnZXRcIiAvPlxuICAgICAgICAgICAgPC9kaXY+XG5cbiAgICAgICAgICAgIDxkaXYgc3R5bGU9e3sgcG9zaXRpb246ICdyZWxhdGl2ZScsIG1hcmdpbjogJzAgYXV0byAxNnB4JyB9fT5cbiAgICAgICAgICAgICAgPGgyXG4gICAgICAgICAgICAgICAgc3R5bGU9e3tcbiAgICAgICAgICAgICAgICAgIGZvbnRGYW1pbHk6ICdCZWJhcyBOZXVlLCBzYW5zLXNlcmlmJyxcbiAgICAgICAgICAgICAgICAgIGZvbnRTaXplOiAnNDhweCcsXG4gICAgICAgICAgICAgICAgICBjb2xvcjogJ3ZhcigtLXN3LWNvbG9yLXBpbmssICNmZjY0ZDUpJyxcbiAgICAgICAgICAgICAgICAgIFdlYmtpdFRleHRTdHJva2U6ICcxcHggIzAwMCcsXG4gICAgICAgICAgICAgICAgICBtYXJnaW46IDBcbiAgICAgICAgICAgICAgICB9fVxuICAgICAgICAgICAgICA+XG4gICAgICAgICAgICAgICAgTUVTU0FHRSBTRU5UIVxuICAgICAgICAgICAgICA8L2gyPlxuICAgICAgICAgICAgICA8TG90dGllIGNsYXNzTmFtZT1cInN3LXBvcHVwLXN1Y2Nlc3MtdGl0bGUtbG90dGllXCIgYW5pbWF0aW9uRGF0YT17bGluZVR3b30gLz5cbiAgICAgICAgICAgIDwvZGl2PlxuXG4gICAgICAgICAgICA8cCBzdHlsZT17eyBmb250U2l6ZTogJzE4cHgnLCBmb250V2VpZ2h0OiA2MDAsIG1hcmdpbkJvdHRvbTogJzI0cHgnIH19PlxuICAgICAgICAgICAgICBUaGFuayB5b3UsIHtmb3JtRGF0YS5uYW1lfSEgV2Ugd2lsbCByZXZpZXcgeW91ciBpbnF1aXJ5IGFuZCBnZXQgYmFjayB0byB5b3Ugd2l0aGluIDI0IGhvdXJzLlxuICAgICAgICAgICAgPC9wPlxuICAgICAgICAgICAgPGJ1dHRvblxuICAgICAgICAgICAgICBvbkNsaWNrPXtoYW5kbGVSZXNldH1cbiAgICAgICAgICAgICAgY2xhc3NOYW1lPVwic3ctYnV0dG9uIHN3LXllbGxvd1wiXG4gICAgICAgICAgICAgIHN0eWxlPXt7IHBhZGRpbmc6ICcxMnB4IDI4cHgnLCBmb250U2l6ZTogJzE2cHgnLCBjdXJzb3I6ICdwb2ludGVyJyB9fVxuICAgICAgICAgICAgPlxuICAgICAgICAgICAgICBEb25lXG4gICAgICAgICAgICA8L2J1dHRvbj5cbiAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgKX1cbiAgICAgIDwvZGl2PlxuICAgIDwvZGl2PlxuICApO1xufVxuIl0sImZpbGUiOiJDOi9Vc2Vycy9BeXVzaG1hbi9Eb3dubG9hZHMvVGVzdC9zcmMvY29tcG9uZW50cy9Qb3B1cE1vZGFsLmpzeCJ9
