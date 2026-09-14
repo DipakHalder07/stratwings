@@ -518,14 +518,19 @@ main {
     display: none;
 }
 
+.sw-footer-img,
 .sw-footer-video {
     position: absolute;
-    bottom: -10%;
+    bottom: -8%;
     left: 50%;
     transform: translate(-50%);
-    height: 70%;
+    height: 75%;
+    max-height: 780px;
     width: auto;
+    max-width: 65vw;
+    object-fit: contain;
     z-index: 1;
+    pointer-events: none;
 }
 
 @media screen and (min-width: 1920px) {

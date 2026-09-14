@@ -97,26 +97,18 @@ export default function Footer({ onOpenContact }) {
               </div>
             </div>
 
-            {/* Desktop Transparent Video */}
-            <video
-              className="sw-footer-video"
-              autoPlay
-              loop
-              muted
-              playsInline
-              width="856"
-              height="1148"
-            >
-              <source src="/video/footer.mp4" type='video/mp4; codecs="hvc1"' />
-              <source src="/video/footer.webm" type="video/webm" />
-              Your browser does not support videos.
-            </video>
+            {/* Footer Image */}
+            <img
+              className="sw-footer-img sw-footer-video"
+              src="/image/footer/footer-img.png"
+              alt="StratWings Team"
+            />
 
             {/* Mobile Brand Cutout */}
             <img
               className="sw-footer-images-brand-mobile"
-              src="/image/footer/brand-mobile.png"
-              alt="Design Studio"
+              src="/image/footer/footer-img.png"
+              alt="StratWings Team"
             />
           </div>
 
