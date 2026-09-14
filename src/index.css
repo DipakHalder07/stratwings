@@ -1,15 +1,23 @@
 :root {
-  /* ========================================================
+    /* ========================================================
      STRATWINGS (SW) COLOR PALETTE - MATCHED TO LOGO!
      ======================================================== */
-  --sw-color-yellow: #cab373; /* StratWings Brand Gold (from logo 'Wings') */
-  --sw-color-yellow-hover: #b89f5d; /* Deeper Gold hover */
-  --sw-color-pink: #0c2247; /* StratWings Deep Navy Blue (from logo 'strat') */
-  --sw-color-pink-soft: #a1b8e0; /* StratWings Light Slate / Periwinkle (from logo 'S' wave) */
-  --sw-color-pink-hover: #436399; /* StratWings Mid Slate Blue (from logo 'S' wave) */
-  --sw-color-black: #07152d; /* Deep Midnight Navy Text & Outlines */
-  --sw-color-white: #ffffff; /* Crisp White */
-  --sw-folder-filter: hue-rotate(250deg) saturate(1.3) brightness(0.95); /* StratWings Royal Navy/Blue Filter */
+    --sw-color-yellow: #cab373;
+    /* StratWings Brand Gold (from logo 'Wings') */
+    --sw-color-yellow-hover: #b89f5d;
+    /* Deeper Gold hover */
+    --sw-color-pink: #5476f8;
+    /* StratWings Deep Navy Blue (from logo 'strat') */
+    --sw-color-pink-soft: #a1b8e0;
+    /* StratWings Light Slate / Periwinkle (from logo 'S' wave) */
+    --sw-color-pink-hover: #436399;
+    /* StratWings Mid Slate Blue (from logo 'S' wave) */
+    --sw-color-black: #07152d;
+    /* Deep Midnight Navy Text & Outlines */
+    --sw-color-white: #ffffff;
+    /* Crisp White */
+    --sw-folder-filter: hue-rotate(250deg) saturate(1.3) brightness(0.95);
+    /* StratWings Royal Navy/Blue Filter */
 }
 
 html.lenis,
@@ -3877,7 +3885,7 @@ main {
     width: 100%;
     background-size: cover;
     background-image: url(/assets/bg-first-Cpqbn9oc.png);
-    overflow: visible;
+    overflow: clip;
 }
 
 .sw-concepts-content {
@@ -3889,7 +3897,8 @@ main {
     margin-bottom: -12px;
 }
 
-.sw-concepts-sticky {
+.sw-concepts-sticky,
+.sw-concepts-products-sticky {
     position: sticky;
     top: 260px;
     height: calc(100% - 260px);
@@ -4878,9 +4887,10 @@ main {
 .sw-feedback-envelope-down,
 .sw-feedback-envelope-had,
 .sw-vibe-label-img {
-  filter: var(--sw-folder-filter, none);
-  transition: filter 0.3s ease;
+    filter: var(--sw-folder-filter, none);
+    transition: filter 0.3s ease;
 }
+
 .sw-feedback-envelope-main {
     position: relative;
     z-index: 1;

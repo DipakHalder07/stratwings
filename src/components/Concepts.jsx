@@ -104,7 +104,7 @@ export default function Concepts({ onOpenContact }) {
           </div>
 
           {/* Products Grid (Desktop 3 vertical columns, Mobile horizontal multi-row sliders) */}
-          <div className="sw-concepts-products-sticky">
+          <div className="sw-concepts-products-sticky sw-concepts-sticky">
             <div className="sw-concepts-products">
               {/* Row 1 / Col 1 */}
               <motion.div
