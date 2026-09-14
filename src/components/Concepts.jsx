@@ -1,7 +1,8 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import Lottie from 'lottie-react';
 import { boldLinesOne } from '../assets/lottie/animations';
+import ConceptsSubtitleBg from './ConceptsSubtitleBg';
 
 const PRODUCTS_FIRST = [
   { img: '/image/concepts/product/product1.png' },
@@ -25,33 +26,60 @@ const PRODUCTS_THIRD = [
   '/image/concepts/product/product13.png',
   '/image/concepts/product/product14.png',
   '/image/concepts/product/product15.png',
-  '/image/concepts/product/product16.png',
-  '/image/concepts/product/product6.png'
+  '/image/concepts/product/product16.png'
 ];
+
+function useIsMobile(breakpoint = 1110) {
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const update = () => setIsMobile(window.innerWidth <= breakpoint);
+    update();
+    window.addEventListener('resize', update);
+    return () => window.removeEventListener('resize', update);
+  }, [breakpoint]);
+  return isMobile;
+}
 
 export default function Concepts({ onOpenContact }) {
   const containerRef = useRef(null);
+  const isMobile1110 = useIsMobile(1110);
+  const isMobile614 = useIsMobile(614);
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ['start start', 'end end']
   });
 
-  // Column 1: slight upward drift
-  const y1 = useTransform(scrollYProgress, [0, 1], ['0%', '-15%']);
-  // Column 2: upward scroll parallax
-  const y2 = useTransform(scrollYProgress, [0, 1], ['5%', '-35%']);
-  // Column 3: downward opposing scroll parallax
-  const y3 = useTransform(scrollYProgress, [0, 1], ['-30%', '5%']);
+  // Desktop vertical scroll transforms
+  const x = useTransform(scrollYProgress, [0, 1], ['-5%', '-37%']);
+  const y = useTransform(scrollYProgress, [0, 1], ['-37%', '-5%']);
+  const b = useSpring(x, { stiffness: 80, damping: 20 });
+  const S = useSpring(y, { stiffness: 80, damping: 20 });
 
-  const smoothY1 = useSpring(y1, { stiffness: 70, damping: 22 });
-  const smoothY2 = useSpring(y2, { stiffness: 70, damping: 22 });
-  const smoothY3 = useSpring(y3, { stiffness: 70, damping: 22 });
+  // Mobile horizontal scroll transforms (creates the multi-row slider moving on scroll)
+  const T = useTransform(scrollYProgress, [0, 1], isMobile1110 ? ['0%', '-30%'] : ['0%', '-60%']);
+  const k = useTransform(scrollYProgress, [0, 1], isMobile1110 ? ['-30%', '0%'] : ['-60%', '0%']);
+  const M = useSpring(T, { stiffness: isMobile1110 ? 50 : 80, damping: isMobile1110 ? 25 : 20 });
+  const _ = useSpring(k, { stiffness: 80, damping: 20 });
+
+  const RowSecond = ({ reverse = true }) => (
+    <motion.div
+      className="sw-concepts-products-inner"
+      style={isMobile1110 ? { x: reverse ? _ : M } : { y: reverse ? S : b }}
+    >
+      <div className="sw-concepts-products-column">
+        {PRODUCTS_SECOND.concat(PRODUCTS_SECOND).map((src, idx) => (
+          <img src={src} alt="product" key={idx} />
+        ))}
+      </div>
+    </motion.div>
+  );
 
   return (
     <section className="sw-concepts" ref={containerRef}>
       <div className="sw-container">
         <div className="sw-concepts-content">
-          {/* Sticky Left Column: Titles & CTA */}
+          {/* Titles & CTA */}
           <div className="sw-concepts-titles">
             <h2 className="sw-concepts-title">
               Bringing <span className="sw-brands">Concepts</span> <br />
@@ -65,6 +93,7 @@ export default function Concepts({ onOpenContact }) {
             <p className="sw-concepts-subtitle">
               Your project deserves a place in our <br />
               gallery of standout designs
+              <ConceptsSubtitleBg />
             </p>
             <button
               onClick={onOpenContact}
@@ -74,11 +103,14 @@ export default function Concepts({ onOpenContact }) {
             </button>
           </div>
 
-          {/* 3-Column Parallax Products Grid */}
+          {/* Products Grid (Desktop 3 vertical columns, Mobile horizontal multi-row sliders) */}
           <div className="sw-concepts-products-sticky">
             <div className="sw-concepts-products">
-              {/* Column 1 */}
-              <motion.div className="sw-concepts-products-inner" style={{ y: smoothY1 }}>
+              {/* Row 1 / Col 1 */}
+              <motion.div
+                className="sw-concepts-products-inner"
+                style={isMobile1110 ? { x: M } : { y: b }}
+              >
                 <div className="sw-concepts-products-column">
                   {PRODUCTS_FIRST.concat(PRODUCTS_FIRST).map((item, idx) => (
                     <div key={`c1-${idx}`} className="sw-concepts-product">
@@ -89,27 +121,23 @@ export default function Concepts({ onOpenContact }) {
                 </div>
               </motion.div>
 
-              {/* Column 2 */}
-              <motion.div className="sw-concepts-products-inner" style={{ y: smoothY2 }}>
+              {/* Row 2 / Col 2 */}
+              <RowSecond reverse={true} />
+
+              {/* Row 3 / Col 3 */}
+              <motion.div
+                className="sw-concepts-products-inner"
+                style={isMobile1110 ? { x: M } : { y: b }}
+              >
                 <div className="sw-concepts-products-column">
-                  {PRODUCTS_SECOND.concat(PRODUCTS_SECOND).map((src, idx) => (
-                    <div key={`c2-${idx}`} className="sw-concepts-product">
-                      <img src={src} alt={`concept product 2-${idx + 1}`} />
-                    </div>
+                  {PRODUCTS_THIRD.concat(PRODUCTS_THIRD).map((src, idx) => (
+                    <img src={src} alt={`concept product 3-${idx + 1}`} key={idx} />
                   ))}
                 </div>
               </motion.div>
 
-              {/* Column 3 */}
-              <motion.div className="sw-concepts-products-inner" style={{ y: smoothY3 }}>
-                <div className="sw-concepts-products-column">
-                  {PRODUCTS_THIRD.concat(PRODUCTS_THIRD).map((src, idx) => (
-                    <div key={`c3-${idx}`} className="sw-concepts-product">
-                      <img src={src} alt={`concept product 3-${idx + 1}`} />
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
+              {/* Row 4 (mobile < 614px) */}
+              {isMobile614 && <RowSecond reverse={true} />}
             </div>
           </div>
         </div>

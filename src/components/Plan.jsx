@@ -1,6 +1,8 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import RunningLine from './RunningLine';
+import PlanBarcode from './PlanBarcode';
+import PlanBulletIcon from './PlanBulletIcon';
 
 const PLANS = [
   {
@@ -44,14 +46,16 @@ const PLANS = [
   }
 ];
 
+
+
 function PlanCard({ name, subtitle, subtitleBg, description, price, onClick }) {
   const cardRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: cardRef,
-    offset: ['start end', 'center center']
+    offset: ['20% end', '40% center']
   });
 
-  const slideY = useTransform(scrollYProgress, [0, 1], ['-35%', '0%']);
+  const y = useTransform(scrollYProgress, [0, 1], ['-100%', '0%']);
 
   return (
     <div className="sw-plan-card" ref={cardRef}>
@@ -59,7 +63,7 @@ function PlanCard({ name, subtitle, subtitleBg, description, price, onClick }) {
       <div className="sw-plan-card-printing">
         <motion.div
           className="sw-plan-card-content"
-          style={{ y: slideY, transformOrigin: 'top center' }}
+          style={{ y, transformOrigin: 'top center' }}
         >
           <img className="sw-plan-card-content-bg" src="/image/plan/plan-card-bg.png" alt="card-bg" />
           <h3 className="sw-plan-card-title">{name}</h3>
@@ -71,9 +75,7 @@ function PlanCard({ name, subtitle, subtitleBg, description, price, onClick }) {
             <ul>
               {description.map((item, idx) => (
                 <li key={idx}>
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="8" cy="8" r="4" fill="#000" />
-                  </svg>
+                  <PlanBulletIcon />
                   <span>{item}</span>
                 </li>
               ))}
@@ -84,6 +86,7 @@ function PlanCard({ name, subtitle, subtitleBg, description, price, onClick }) {
           </button>
           <div className="sw-plan-card-revisions">
             <p className="sw-plan-card-revisions-text">Hourly rate for extra revisions $30/hour</p>
+            <PlanBarcode />
           </div>
           <div className="sw-plan-card-price">
             <span>from</span>
