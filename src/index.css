@@ -16,8 +16,9 @@
     /* Deep Midnight Navy Text & Outlines */
     --sw-color-white: #ffffff;
     /* Crisp White */
-    --sw-folder-filter: hue-rotate(250deg) saturate(1.3) brightness(0.95);
-    /* StratWings Royal Navy/Blue Filter */
+    --sw-folder-filter: hue-rotate(285deg) saturate(1.0) brightness(1.10);
+    --sw-vibe-filter: hue-rotate(285deg) saturate(1.0) brightness(1.10);
+    /* StratWings Royal Blue #5476f8 Filter */
 }
 
 html.lenis,
@@ -3005,6 +3006,8 @@ main {
     margin: 0 auto;
     width: 32.43vw;
     height: auto;
+    filter: var(--sw-vibe-filter, hue-rotate(285deg) saturate(1.0) brightness(1.10));
+    transition: filter 0.3s ease;
 }
 
 .sw-vibe-label-lottie-one {
